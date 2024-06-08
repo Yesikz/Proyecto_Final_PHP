@@ -461,3 +461,44 @@ nav ul li {
 }
 
 }
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        text-align: left;
+        padding: 20px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav ul li {
+        margin: 0 15px;
+        display: inline-block;
+    }
+
+
+    #titulo {
+        margin-left: 32%;
+        text-align: center;
+    }
+
+    .boton-2 {
+        margin-left: 45%;
+        text-align: center;
+    }
+
+    .contenedor{
+        margin-top: 30px;
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 40px;
+        margin-left: auto;
+        margin-right: auto; 
+        max-width: 960px;   
+    
+    }
+
+}
