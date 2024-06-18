@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,26 +13,33 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap"
         rel="stylesheet">
+<<<<<<< HEAD:registro_peliculas.html
    <!-- <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/registro.css">-->
     <link rel="stylesheet" href="css/estilos.css">
     <title>Registro Peliculas</title>
+=======
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/registro.css">
+    <title>Registro Películas</title>
+>>>>>>> 1bd9603a9f07223730a584b71ca598297f40d20f:pages/registro_peliculas.html
 </head>
 
-<body style="background-image: url(img/fondo\ pag\ inicio.jpg);">
+<body style="background-image: url('../img/fondo_pag_inicio_adm.jpg');">
 
     <header>
         <div class="logo-container">
-            <h1><img id="logo" src="img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
+            <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
         </div>
 
         <nav id="navbar">
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li class><a href="tendencias.html">(API)</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li class><a href="../pages/tendencias.html">(API)</a></li>
                     <!--<li><a href="registro.html">Registrarse</a></li>-->
-                    <li class="menu-1"><a href="inicio.html">Inicia Sesión</a></li>
+                    <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
+                    <li class="menu-1"><a href="../pages/inicio_sesion.html">Inicia Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,11 +48,11 @@
     <main>
         <section class="login">
             <form class="form-container" action="" method="post">
-                <h1 class="titulo">Registro de Peliculas</h1><br>
-              
+                <h1 class="titulo">Registro de Películas</h1><br>
+
                 <input type="text" id="titulo_pelicula" placeholder="Título" required>
                 <input type="text" id="director" placeholder="Director" required>
-                
+
                 <select id="genero" required>
                     <option value="" disabled selected>Selecciona el género de la película</option>
                 </select>
@@ -53,9 +60,7 @@
                 <input type="number" id="ano" placeholder="Año de lanzamiento" required>
                 <input type="number" id="duracion" placeholder="Duración (minutos)" required>
                 <textarea id="sinopsis" placeholder="Sinopsis" required></textarea>
-                <input type="text" id="reparto" placeholder="Reparto principal" required>
-                <input type="text" id="idioma" placeholder="Idioma" required>
-                
+
                 <select id="pais" required>
                     <option value="" disabled selected>Selecciona el país de origen</option>
                 </select>
@@ -63,11 +68,9 @@
                 <input type="text" id="calificacion" placeholder="Calificación" required>
                 <input type="file" id="poster" accept="image/*" required>
                 <input type="url" id="trailer" placeholder="URL del tráiler" required>
-                <input type="text" id="productora" placeholder="Productora" required>
-                <textarea id="premios" placeholder="Premios" required></textarea>
-                <textarea id="criticas" placeholder="Críticas" required></textarea>
- 
-                <button type="submit" class="btn-registrarse">Registrar Pelicula</button>
+                <textarea id="comentarios" placeholder="Comentarios" required></textarea>
+
+                <button type="submit" class="btn-registrarse">Registrar Película</button>
 
             </form>
         </section>
@@ -77,17 +80,16 @@
         <div class="texto-footer">
             <div>
                 <ul>
-                    <li id="footerTerminos" class="term-1">Terminos y Condiciones</li>
+                    <li class="term-1">Términos y Condiciones</li>
                     <li class="term-1">Preguntas Frecuentes</li>
                     <li class="term-1">Ayuda</li>
-                    <li class="peli-adm">Administrar Peliculas</li>
                 </ul>
             </div>
         </div>
         <div class="redes-sociales">
-            <a href="https://www.facebook.com/" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
-            <a href="https://twitter.com/" target="_blank"><img src="img/twitter.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="../img/twitter.png" alt="Twitter"></a>
         </div>
     </footer>
 

@@ -1,3 +1,22 @@
+// VALIDAR LA CONTRASEÑA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Obtener los elementos de contraseña y confirmación
+const password = document.getElementById('password');
+const confirmarPassword = document.getElementById('confirmarPassword');
+
+// Función para verificar la coincidencia de contraseñas
+function validarContraseña() {
+    if (password.value !== confirmarPassword.value) {
+        confirmarPassword.setCustomValidity("Las contraseñas no coinciden");
+    } else {
+        confirmarPassword.setCustomValidity('');
+    }
+}
+
+// Agregar evento de input para validar mientras el usuario escribe
+password.addEventListener('input', validarContraseña);
+confirmarPassword.addEventListener('input', validarContraseña);
+
+
 // PAISES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 fetch('../json/paises.json')
     .then(response => response.json())
@@ -15,8 +34,8 @@ fetch('../json/paises.json')
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
-// MODAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// MODAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 var modal = document.getElementById("termsModal");
 
 // Obtener el botón que abre el modal
@@ -31,23 +50,23 @@ function openModal() {
 }
 
 // Cuando el usuario haga clic en el botón, abre el modal
-btn.onclick = function(event) {
+btn.onclick = function (event) {
     event.preventDefault(); // Evitar el comportamiento por defecto del enlace
     openModal();
 }
 
 // Cuando el usuario haga clic en el li del footer, abre el modal
-document.getElementById("footerTerminos").onclick = function() {
+document.getElementById("footerTerminos").onclick = function () {
     openModal();
 }
 
 // Cuando el usuario haga clic en <span> (x), cierra el modal
-span.onclick = function() {
+span.onclick = function () {
     modal.style.display = "none";
 }
 
 // Cuando el usuario haga clic en cualquier parte fuera del modal, lo cierra
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }

@@ -318,6 +318,11 @@ footer {
     border-radius: 8px;
 }
 
+.peli-adm a {
+    text-decoration: none; 
+    color: #fff; 
+}
+
 /*********************REGISTRO********************************/
 
 
