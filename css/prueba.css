@@ -1,10 +1,9 @@
-* {
+*{
     margin: 0;
-    font-family: "Noto Sans Khojki", Arial, sans-serif;
+    font-family: "Noto Sans Khojki";
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -12,78 +11,78 @@ body {
     background-color: #232220;
     overflow-x: hidden;
 }
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #070000;
-    color: #fff;
-    width: 100%;
+    color: #fff; 
 }
+/*************************LOGO*********************************/
 
-/* Logo */
 #logo {
     width: 100px;
 }
-
 .logo-container {
-    display: inline-block;
-}
+    display: inline-block; 
+  }
+  
+  .logo-container img {
+    transition: transform 0.3s ease; 
+  }
+  
+  .logo-container:hover img {
+    transform: scale(1.1); 
+  }
+  
 
-.logo-container img {
-    transition: transform 0.3s ease;
-}
+  /*****************************NAVBAR*******************/
 
-.logo-container:hover img {
-    transform: scale(1.1);
-}
-
-/* Navbar */
-nav ul {
+  
+  nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 nav ul li {
+    display: inline;
     margin-right: 20px;
     padding: 5px;
+    
 }
 
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    padding: 4px 20px;
-    border-radius: 8px;
+    padding: 4px 20px; 
+    border-radius: 8px; 
     border: 1px solid transparent;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+
 nav ul li a:hover {
     border-radius: 15px;
-    color: #ffffff;
+    color: #ffffff; 
     box-shadow: 0px 0px 30px rgba(135, 128, 229, 0.5);
 }
-
 nav ul li.menu-1 a {
     background-color: #232220;
 }
 
 nav ul li.menu-1 a:hover {
     background-color: #070000;
-    color: #fff;
+    color: #fff; 
 }
 
-/* Footer */
+/******************* FOOTER ****************/
+
 footer {
     background-color: #070000;
     color: #fff;
     padding: 20px;
     text-align: center;
-    width: 100%;
 }
 
 .footer div ul {
@@ -91,11 +90,11 @@ footer {
     justify-content: center;
     list-style: none;
     padding: 0;
-    flex-wrap: wrap;
 }
 
-.term-1 {
+.term-1{
     padding: 10px;
+   
 }
 
 .redes-sociales img {
@@ -103,42 +102,47 @@ footer {
     margin: 15px 0 0 5px;
 }
 
-.peli-adm {
+.peli-adm{
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
     color: #fff;
     padding: 10px 5px;
     border-radius: 8px;
 }
 
-/* Main */
+/**************************MAIN**********************/
+
 .imag-1 {
-    background-image: url('../img/4.jpg');
+    background-image: url('../img/4.jpg'); 
     background-size: cover;
-    background-position: center;
-    margin: 20px 13px;
+    background-position: center; 
+    margin-bottom: 20px;
+    margin-left: 13px;
+    margin-right: 13px;
     border-radius: 10px;
 }
 
 h1, h3 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 15 px;
     color: #fff;
     text-align: center;
 }
 
+
 p {
     color: #fff;
     margin: 30px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 100px;
+    margin-right: 100px;
     font-weight: bold;
 }
 
 hr {
-    border: none;
-    border-top: 3px solid #7591dd;
-    margin-left: 10%;
-    margin-right: 10%;
+    border: none; 
+    border-top: 3px solid #7591dd; 
+    margin-left: 100px; 
+    margin-right: 100px;
+    
 }
 
 form {
@@ -158,93 +162,108 @@ form {
     }
 }
 
-/* Search */
-#titulo {
+
+/*********************** BUSCADOR****************/
+
+#titulo{
     margin-left: 38%;
     width: 300px;
     border-radius: 15px;
 }
 
-/* Buttons */
+/***********************BOTONES*******************/
 button {
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
     color: #fff;
-    border: 0;
+    border: 10px;
     border-radius: 10px;
     padding: 10px 20px;
     cursor: pointer;
     margin: 10px;
 }
+.boton-1{
+    margin-left: 43%;
+    margin-bottom: 20px;
+}
 
-.boton-1, .boton-2, .boton-direc {
-    display: block;
-    margin: 20px auto;
+.boton-2{
+    margin-left: 47%;
+    margin-bottom: 20px;
+}
+
+.boton-direc{
+    margin-left: 39%;
+    margin-top: 20px;
 }
 
 button:hover {
     border-radius: 20px;
-    background-image: linear-gradient(to bottom, #476bce, #b37ef0);
+    background-image: linear-gradient(to bottom,    #476bce, #b37ef0);
     box-shadow: 0px 0px 40px rgba(135, 128, 229, 0.5);
 }
 
-/* Tendencias */
-.contenedor {
+/********************TENDENCIAS********************/
+
+.contenedor{
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-left: 5%;
-    margin-right: 5%;
+    grid-template-columns: repeat(3, calc(33.33% - 100px));
+    gap:40px;
+    margin-left: 200px;
+
 }
 
 .card {
     border: 2px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: 100%;
-    max-width: 250px;
+    width: 250px;
     height: 350px;
     box-shadow: 0px 4px 8px rgba(247, 231, 231, 0.89);
     box-shadow: 0px 0px 15px rgba(135, 128, 229, 0.5);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; 
 }
 
 .card:hover {
     transform: scale(0.95);
 }
 
+
 .card img {
     width: 100%;
-    height: 100%;
-    display: block;
+    height: 100%; 
+    display: block; 
 }
 
 .card .info {
     position: absolute;
     top: 0;
-    left: 100%;
-    width: 100%;
+    left: 100%; 
+    width: 250px; 
     height: 100%;
-    background-color: rgba(17, 15, 15);
-    color: #fff;
+    background-color: rgba(17, 15, 15);    color: #fff;
     padding: 20px;
-    transition: left 0.3s ease;
+    transition: left 0.0s ease; 
+   
 }
 
 .card:hover .info {
-    left: 0;
+    left: 0; 
+    
 }
+/******************LAS MAS VISTAS***********************/
 
-/* Las mas vistas */
 .contenedor-1 {
-    display: flex;
-    justify-content: flex-start;
-    gap: 28px;
-    overflow-x: auto;
-    margin: 30px 10%;
+    display: flex; 
+    justify-content: flex-start; 
+    gap: 28px; 
+    overflow-x: auto; 
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
     animation: slideUp 1s ease-in-out;
-}
 
+}
 @keyframes slideUp {
     from {
         transform: translateY(50%);
@@ -257,68 +276,71 @@ button:hover {
 }
 
 .card-1 {
-    flex: 0 0 auto;
-    width: 180px;
+    flex: 0 0 auto; 
+    width: 180px; 
     height: 300px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; 
 }
 
 .card-1:hover {
     transform: scale(0.95);
 }
 
+
+
 .card-1 img {
     width: 100%;
-    height: 100%;
-    display: block;
+    height: 100%; 
+    display: block; 
     border-radius: 8px;
     box-shadow: 0px 0px 8px rgba(135, 128, 229, 0.5);
+   
 }
 
 .contenedor-1::-webkit-scrollbar {
-    width: 5px;
+    width: 5px; 
 }
-
 .contenedor-1::-webkit-scrollbar-thumb {
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
-    border-radius: 8px;
+    border-radius: 8px; 
 }
 
 .contenedor-1::-webkit-scrollbar-track {
     background-color: #424141;
     border-radius: 8px;
+    
 }
+/*********************REGISTRO (USUARIOS Y PELICULAS)********************************/
 
-/* Registro */
+
 .form-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 90%;
+    max-width: 500px;
+   
     background-color: rgb(8, 2, 2);
     padding: 50px;
     border-radius: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.termycond {
+.termycond{
     color: white;
     margin-left: 35px;
 }
 
 .form-container input,
 .form-container select,
-.form-container button,
-.form-container textarea {
+.form-container button {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 0; 
     border: 1px solid #ccc;
     border-radius: 30px;
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
 }
 
 .register-message {
@@ -340,7 +362,7 @@ button:hover {
     color: white;
 }
 
-.terms-container {
+.terms-container{
     display: flex;
 }
 
@@ -351,9 +373,9 @@ label {
 }
 
 input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
+    width: 20px; 
+    height: 20px; 
+    margin-right: 10px; 
 }
 
 #termsLink {
@@ -361,52 +383,71 @@ input[type="checkbox"] {
     padding-left: 5px;
 }
 
-/* Modal */
+
+/* Registro de Peliculas */ 
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: "Noto Sans Khojki", Arial, sans-serif;
+}
+
+
+
+/* Estilos para el Modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
     padding-top: 60px;
-}
-
-.modal-content {
+  }
+  
+  .modal-content {
     background-color: #fefefe;
-    margin: 5% auto;
+    margin: 5% auto; 
     padding: 40px;
     border: 1px solid #888;
-    width: 95%;
-}
-
-.close {
+    width: 95%; 
+  }
+  
+  .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
+  }
+  
+  .close:hover,
+  .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
+  }
 
-/* Inicio Sesion */
+
+/********************** INICIO SESION***********************/
+
 .form-insec {
-    margin: 40px auto;
+   
+    margin: 40px;
+    margin-left: 38%;
     font-family: Arial, sans-serif;
-    background-color: rgb(8, 2, 2);
+    background-color:  rgb(8, 2, 2);
     padding: 20px;
     border-radius: 20px;
-    width: 80%;
-    max-width: 300px;
+    width: 300px;
     text-align: center;
 }
 
@@ -422,8 +463,9 @@ input[type="checkbox"] {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
+    border-radius: 30px;
 }
 
 .form-insec h5 {
@@ -437,107 +479,22 @@ input[type="checkbox"] {
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
     color: white;
     cursor: pointer;
+    border-radius: 30px;
 }
 
-/* API */
+/******************* API ***************/
+
+
+
 .contenedor .pelicula .titulo {
-    font-size: 16px;
-    font-weight: 600;
+	font-size: 16px;
+	font-weight: 600;
+    
 }
 
 .contenedor .pelicula .poster {
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 15px;
-}
-/********************* RESPONSIVE **************************/
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 15px;
 
-    
-
-/*Media query para tablet y telefono*/
-/* Media query para tablet */
-@media screen and (max-width: 768px) {
-    /* Ajustes generales */
-    body {
-        padding: 0 10px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .contenedor {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-    }
-
-    .form-container {
-        max-width: 100%;
-        padding: 20px;
-    }
-
-    .contenedor-1 {
-        margin: 20px 5%;
-    }
-}
-
-/* Media query para telefono */
-@media screen and (max-width: 550px) {
-    /* Ajustes generales */
-    body {
-        padding: 0 5px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 0;
-        margin-bottom: 5px;
-    }
-
-    nav ul li a {
-        padding: 4px 10px;
-    }
-
-    .contenedor {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-    }
-
-    .form-container {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .contenedor-1 {
-        margin: 10px 2%;
-    }
-
-    /* Botones */
-    button {
-        padding: 8px 10px;
-    }
-
-    .boton-1, .boton-2, .boton-direc {
-        margin: 10px auto;
-    }
 }
