@@ -454,10 +454,10 @@ input[type="checkbox"] {
 
     
 
-/*Media query para tablet y telefono*/
+
 /* Media query para tablet */
 @media screen and (max-width: 768px) {
-    /* Ajustes generales */
+
     body {
         padding: 0 10px;
     }
@@ -494,7 +494,7 @@ input[type="checkbox"] {
 
 /* Media query para telefono */
 @media screen and (max-width: 550px) {
-    /* Ajustes generales */
+  
     body {
         padding: 0 5px;
     }
@@ -532,7 +532,7 @@ input[type="checkbox"] {
         margin: 10px 2%;
     }
 
-    /* Botones */
+   
     button {
         padding: 8px 10px;
     }
