@@ -1,37 +1,33 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logoY.png" type="image/x-icon">
-    <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
+    <link rel="shortcut icon" href="../img/logoY.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Acisey Movies</title>
+    <title>Acisey Movies - Login Administrador</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
-<body style="background-image: url('../img/fondo_pag_inicio.jpg');">
+<body style="background-image: url('../img/fondo_pag_inicio_adm.jpg');">
     <div class="wrapper">
         <header>
             <div class="logo-container">
                 <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
             </div>
-
             <nav id="navbar">
                 <div class="menu">
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
-                        <li class><a href="../pages/tendencias.html">(API)</a></li>
+                        <li><a href="../pages/tendencias.html">(API)</a></li>
                         <li><a href="../pages/registro_usuario.html">Registrarse</a></li>
-                        <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
+                        <li class="peli-adm"><a href="inicio_sesion_adm.php">Administrar</a></li>
                         <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                     </ul>
                 </div>
@@ -41,14 +37,17 @@
         <main class="main-container">
             <div class="form-insec">
                 <h2>Iniciar Sesión</h2>
-                <form action="" method="post">
+                <?php
+                if (isset($_SESSION['error'])) {
+                    echo '<p class="error">' . $_SESSION['error'] . '</p>';
+                    unset($_SESSION['error']); // Clear the error message
+                }
+                ?>
+                <form action="authenticate.php" method="post">
                     <input id="username" type="text" name="usuario" placeholder="Usuario" required>
-                    <h5>El correo electronico es necesario</h5>
                     <input id="password" type="password" name="contrasena" placeholder="Contraseña" required>
-                    <h5>La contraseña es necesaria</h5>
                     <input id="button" type="submit" value="Iniciar Sesión">
                 </form>
-                <a href="../pages/registro_usuario.html"><button class="boton-registrate">¡Regístrate ahora!</button></a>
             </div>
         </main>
 
@@ -64,13 +63,12 @@
             </div>
             <div class="redes-sociales">
                 <a href="https://www.facebook.com/" target="_blank"><img src="../img/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.png"
-                        alt="Instagram"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="../img/instagram.png" alt="Instagram"></a>
                 <a href="https://twitter.com/" target="_blank"><img src="../img/twitter.png" alt="Twitter"></a>
             </div>
         </footer>
     </div>
+
     <script src="../js/loginForm.js"></script>
 </body>
-
 </html>
