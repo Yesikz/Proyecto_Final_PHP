@@ -30,7 +30,7 @@
                     <!-- <li><a href="index.html">Inicio</a></li>-->
                     <li class><a href="./pages/tendencias.html">(API)</a></li>
                     <!--<li><a href="registro.html">Registrarse</a></li>-->
-                    <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
+                    <li class="peli-adm"><a href="./pages/inicio_sesion_adm.html">Administrar</a></li>
                     <li class="menu-1"><a href="./pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                 </ul>
             </div>
@@ -41,35 +41,25 @@
     <main>
         <section class="imag-1">
             <div class="1-section">
-                <h1 class="titulo">Ve películas y series</h1>
-                <p>¡Descubre un mundo lleno de emoción y entretenimiento con nuestras películas y series! <br>
-                    <br>
-                    Nuestro extenso catálogo incluye las últimas películas de éxito en cartelera, así como series
-                    originales que te mantendrán enganchado episodio tras episodio.
-                    <br> Y lo mejor de todo, puedes disfrutar de todo este contenido en cualquier dispositivo, cuando y
-                    donde quieras.
-                    <br>
-                    <br>
-                    ¿Listo para vivir una experiencia cinematográfica como ninguna otra? <br> Regístrate ahora y
-                    comienza a explorar un mundo de películas y series que te dejarán sin aliento. <br>
-                </p>
-                <a href="registro.html"><button class="boton-1">¡Regístrate ahora!</button></a>
+                <h1 class="tituloPrincipal">
+                    Peliculas y series ilimitadas<br>
+                    en un solo lugar
+                </h1>
+                <h2 class="subtituloPrincipal">
+
+                    Regístrate ahora y explora un mundo de entretenimiento.
+                </h2>
+                <a href="/pages/registro_usuario.html"><button class="boton-1">¡Regístrate ahora!</button></a>
             </div>
         </section>
 
-        <section>
-
-            <form>
-                <h1> Que estas buscando para ver?</h1>
-                <h3 for="titulo">Título de la película o serie: </h3>
-                <br>
-                <input type="text" id="titulo" name="titulo" required>
-                <br>
+        <section class="buscadorPrincipal">
+            <h2 class="tituloSection">¿Qué estás buscando para ver hoy?</h2>
+            <h3 for="titulo">Título de la película o serie:</h3>
+            <form class="buscadorPeliculas">
+                <input class="inputBuscador" type="text" id="titulo" placeholder="Buscar..." name="titulo" required>
                 <button class="boton-2" type="submit">Buscar</button>
             </form>
-
-
-
         </section>
         <hr>
         <section>

@@ -94,15 +94,39 @@ nav ul li.menu-1 a:hover {
 
 /**************************Main**********************/
 
-.imag-1 {
-    background-image: url('../img/4.jpg'); 
+/* .imag-1 {
+    background-image: url('../img/plataformas_1600x900.jpg'); 
     background-size: cover;
     background-position: center; 
     margin-bottom: 20px;
     margin-left: 13px;
     margin-right: 13px;
     border-radius: 10px;
+} */
+.imag-1 {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to right top, #0000008a, #0000008a),
+      url(../img/plataformas_1600x900.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+.tituloPrincipal {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .subtituloPrincipal {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
 
 h1, h3 {
     font-size: 24px;
@@ -157,14 +181,21 @@ button {
     margin: 10px;
 }
 
+
 .boton-1{
-    margin-left: 43%;
-    margin-bottom: 20px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.boton-2{
-    margin-left: 47%;
-    margin-bottom: 20px;
+.boton-2 {
+    margin: auto;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .boton-direc{
@@ -190,11 +221,44 @@ button:hover {
 
 /*********************** buscador****************/
 
-#titulo{
-    margin-left: 38%;
-    width: 300px;
-    border-radius: 15px;
+.buscadorPrincipal {
+    background-color: #181419;
+    color: rgb(255, 255, 255);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.tituloSection {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2%;
+}
+
+.buscadorPeliculas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.inputBuscador {
+    border: 2px solid white;
+    border-radius: 25px;
+    color: #000000;
+    font-size: 1.2rem;
+    height: 50px;
+    margin: 20px 0px;
+    outline: none;
+    padding: 0px 20px;
+    width: 500px;
+}
+
+
+
 
 
 /********************tendencias********************/
