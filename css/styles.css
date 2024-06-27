@@ -4,6 +4,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,6 +30,8 @@ header {
     background-color: #070000;
     color: #fff; 
 }
+
+
 
 /*************************LOGO*********************************/
 
@@ -162,6 +176,15 @@ button:hover {
     border-radius: 20px;
     background-image: linear-gradient(to bottom,    #476bce, #b37ef0);
     box-shadow: 0px 0px 40px rgba(135, 128, 229, 0.5);
+}
+
+.boton-registrate{
+    color: #b37ef0;
+    background: black;
+}
+
+.boton-registrate:hover{
+    color: white;
 }
 
 
@@ -356,16 +379,23 @@ footer {
 }
 
 /********************** inicio sesion***********************/
-.form-insec {
-   
-    margin: 40px;
-    margin-left: 38%;
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-insec {  
     font-family: Arial, sans-serif;
     background-color:  rgb(8, 2, 2);
     padding: 20px;
     border-radius: 20px;
-    width: 300px;
     text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 .form-insec h2 {
@@ -399,11 +429,14 @@ footer {
     border-radius: 30px;
 }
 
+.centrado {
+    text-align: center;
+    margin-top: 10px; 
+}
+
 
 
 /******************* Api ***************/
-
-
 
 .contenedor .pelicula .titulo {
 	font-size: 16px;
