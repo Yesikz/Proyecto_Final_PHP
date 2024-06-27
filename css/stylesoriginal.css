@@ -93,6 +93,16 @@ nav ul li.menu-1 a:hover {
 }
 
 /**************************Main**********************/
+
+/* .imag-1 {
+    background-image: url('../img/plataformas_1600x900.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    margin-bottom: 20px;
+    margin-left: 13px;
+    margin-right: 13px;
+    border-radius: 10px;
+} */
 .imag-1 {
     color: rgb(255, 255, 255);
     background: linear-gradient(to right top, #0000008a, #0000008a),
@@ -169,7 +179,6 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     margin: 10px;
-   
 }
 
 
@@ -213,6 +222,7 @@ button:hover {
 /*********************** buscador****************/
 
 .buscadorPrincipal {
+    background-color: #181419;
     color: rgb(255, 255, 255);
     height: 50vh;
     display: flex;
@@ -222,8 +232,9 @@ button:hover {
 }
 
 .tituloSection {
-    font-size: 1.5 rem;
-    margin-bottom: 1%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2%;
 }
 
 .buscadorPeliculas {
@@ -238,8 +249,8 @@ button:hover {
     border: 2px solid white;
     border-radius: 25px;
     color: #000000;
-    font-size: 1rem;
-    height: 40px;
+    font-size: 1.2rem;
+    height: 50px;
     margin: 20px 0px;
     outline: none;
     padding: 0px 20px;
@@ -270,7 +281,6 @@ button:hover {
     box-shadow: 0px 4px 8px rgba(247, 231, 231, 0.89);
     box-shadow: 0px 0px 15px rgba(135, 128, 229, 0.5);
     transition: transform 0.3s ease; 
-    position: relative;
 }
 
 .card:hover {
@@ -285,18 +295,15 @@ button:hover {
 }
 
 .card .info {
-    display: block;
     position: absolute;
     top: 0;
     left: 100%; 
-    width:100%;
+    width: 250px; 
     height: 100%;
-    background-color: rgba(17, 15, 15, 0.9);    
-    color: #fff;
+    background-color: rgba(17, 15, 15);    color: #fff;
     padding: 20px;
     transition: left 0.0s ease; 
-    box-sizing: border-box; 
-    overflow: hidden;
+   
 }
 
 .card:hover .info {
@@ -510,7 +517,7 @@ footer {
 
 
 /****** responsive*********/
-/*
+
 @media only screen and (max-width: 600px) {
 header {
     text-align: center;
@@ -599,4 +606,4 @@ nav ul li {
     
     }
 
-}*/
+}
