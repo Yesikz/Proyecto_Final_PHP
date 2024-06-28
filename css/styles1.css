@@ -112,11 +112,17 @@ footer {
 
 /* Main */
 .imag-1 {
-    background-image: url('../img/4.jpg');
+    background-image: url('../img/palomitas-cine.jpeg');
     background-size: cover;
     background-position: center;
     margin: 20px 13px;
     border-radius: 10px;
+}
+.titulo{
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0e0d0d;
+    text-align: center;
 }
 
 h1, h3 {
@@ -157,7 +163,7 @@ form {
         opacity: 1;
     }
 }
-
+-------
 /* Search */
 #titulo {
     margin-left: 38%;
@@ -176,8 +182,13 @@ button {
     margin: 10px;
 }
 
-.boton-1, .boton-2, .boton-direc {
+.boton-1, .boton-2{
     display: block;
+    margin: 20px auto;
+}
+
+.boton-i, .boton-d{
+    display: flex;
     margin: 20px auto;
 }
 
