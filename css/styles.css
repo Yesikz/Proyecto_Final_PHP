@@ -92,17 +92,8 @@ nav ul li.menu-1 a:hover {
     color: #fff; 
 }
 
-/**************************Main**********************/
 
-/* .imag-1 {
-    background-image: url('../img/plataformas_1600x900.jpg'); 
-    background-size: cover;
-    background-position: center; 
-    margin-bottom: 20px;
-    margin-left: 13px;
-    margin-right: 13px;
-    border-radius: 10px;
-} */
+/**************************Main**********************/
 .imag-1 {
     color: rgb(255, 255, 255);
     background: linear-gradient(to right top, #0000008a, #0000008a),
@@ -133,15 +124,6 @@ h1, h3 {
     margin-bottom: 15 px;
     color: #fff;
     text-align: center;
-}
-
-
-p {
-    color: #fff;
-    margin: 30px;
-    margin-left: 100px;
-    margin-right: 100px;
-    font-weight: bold;
 }
 
 hr {
@@ -179,6 +161,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     margin: 10px;
+   
 }
 
 
@@ -199,7 +182,8 @@ button {
 }
 
 .boton-direc{
-    margin-left: 39%;
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -222,7 +206,6 @@ button:hover {
 /*********************** buscador****************/
 
 .buscadorPrincipal {
-    background-color: #181419;
     color: rgb(255, 255, 255);
     height: 50vh;
     display: flex;
@@ -232,9 +215,8 @@ button:hover {
 }
 
 .tituloSection {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2%;
+    font-size: 1.5 rem;
+    margin-bottom: 1%;
 }
 
 .buscadorPeliculas {
@@ -249,8 +231,8 @@ button:hover {
     border: 2px solid white;
     border-radius: 25px;
     color: #000000;
-    font-size: 1.2rem;
-    height: 50px;
+    font-size: 1rem;
+    height: 40px;
     margin: 20px 0px;
     outline: none;
     padding: 0px 20px;
@@ -281,6 +263,7 @@ button:hover {
     box-shadow: 0px 4px 8px rgba(247, 231, 231, 0.89);
     box-shadow: 0px 0px 15px rgba(135, 128, 229, 0.5);
     transition: transform 0.3s ease; 
+    position: relative;
 }
 
 .card:hover {
@@ -295,15 +278,18 @@ button:hover {
 }
 
 .card .info {
+    display: block;
     position: absolute;
     top: 0;
     left: 100%; 
-    width: 250px; 
+    width:100%;
     height: 100%;
-    background-color: rgba(17, 15, 15);    color: #fff;
+    background-color: rgba(17, 15, 15, 0.9);    
+    color: #fff;
     padding: 20px;
     transition: left 0.0s ease; 
-   
+    box-sizing: border-box; 
+    overflow: hidden;
 }
 
 .card:hover .info {
@@ -348,7 +334,6 @@ button:hover {
 }
 
 
-
 .card-1 img {
     width: 100%;
     height: 100%; 
@@ -360,6 +345,8 @@ button:hover {
 
 .contenedor-1::-webkit-scrollbar {
     width: 5px; 
+    height: 10px;
+    border-radius: 10px;
 }
 .contenedor-1::-webkit-scrollbar-thumb {
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
@@ -372,6 +359,9 @@ button:hover {
     
 }
 
+.contenedor-1 {
+    scrollbar-width: thin; 
+    scrollbar-color: #b37ef0 #424141; }
 /******************* footer****************/
 
 footer {
@@ -445,11 +435,12 @@ footer {
 /********************** inicio sesion***********************/
 
 .main-container {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
+  
 }
 
 .form-insec {  
@@ -518,82 +509,161 @@ footer {
 
 /****** responsive*********/
 
-@media only screen and (max-width: 600px) {
-header {
-    text-align: center;
+@media (max-width: 1200px) {
+   
+    header {
+        text-align: center;
+        }
+    
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        }
+    
+        
+    .boton-1{
+        margin-left: 28%;
+    }
+    
+    #titulo{
+        margin-left: 16%;
+    }
+    
+    .boton-2{
+        margin-left: 38%;
+       
+    }
+    .imag-1 {
+        height: 70vh;
+    
+        }
+    .buscadorPrincipal {
+        height: 50vh;
+       
+        }   
+    
+    .contenedor {
+        margin-top: 30px;
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 40px;
+        margin-left: auto;
+        margin-right: auto; 
+        max-width: 960px;   
+    
+    }
+ 
+    .card {
+        width: 180px;
+        height: 250px;
+        transition: transform 0.3s ease; 
     }
 
-nav ul li {
-    display: block;
-    margin: 10px 0;
+    .contenedor-1 {
+        display: flex; 
+        justify-content: flex-start;
+        overflow-y:hidden;
+       
     }
+  
+    .card-1 {
+        width: 180px; 
+        height: 250px;
+        
+    }
+    .tituloPrincipal {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    .subtituloPrincipal {
+        font-size: 1.3rem;
+        margin-bottom: 5rem;
+    }
+    .tituloSection {
+        font-size: 1.5rem;
+        margin-bottom: 3%;
+        margin-left: 10px;
+    }
+    h3{
+        font-size:1.3rem ;
+    }
+    button {
+        border-radius: 10px;
+        padding: 5px 5px;
+     
+       
+    }
+    .boton-1, .boton-2{ 
+        margin: 3px auto;
+        font-size: 1rem;
+    }
+
+
+    .inputBuscador {
+        width: 130%;
+        margin-right: 20%;
+        
+    }
+   
+
+    .pelicula {
+        width: calc(40% - 20px); 
+    }
+
+    }    
+
+/***********/
+
+@media (max-width: 800px) {
+
+    header {
+        text-align: center;
+        }
+    
+    nav ul li {
+        display: block;
+        margin: 5px;
+        margin-right: 10px;
+
+        }
+
+    a {
+        font-size: 10px;
+    }
+
+    .imag-1 {
+        height: 30vh;
+    
+        }
 
     
-.boton-1{
-    margin-left: 28%;
-}
-
-#titulo{
-    margin-left: 16%;
-}
-
-.boton-2{
-    margin-left: 38%;
-   
-}
-
-.boton-direc{
-    margin-left: 20%;
-    margin-top: 20px;
-}
-
-.contenedor{
-    margin-top: 30px;
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 40px;
-    margin-left: auto;
-    margin-right: auto; 
-    max-width: 960px;   
-
-}
-.card-1 {
-   
-    width: 230px; 
-    height: 350px;
-    transition: transform 0.3s ease; 
-}
-
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    header {
-        text-align: left;
-        padding: 20px;
+    .tituloPrincipal {
+        margin-top: 30px;
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
+    .subtituloPrincipal {
+        font-size: 0.8rem;     
+        }
 
-    nav ul {
-        display: flex;
-        justify-content: space-around;
+    .buscadorPrincipal {
+        height: 30vh;
+       
+        }   
+  
+    
+    #titulo{
+        margin-left: 16%;
     }
+    
+    .peli-adm{
 
-    nav ul li {
-        margin: 0 15px;
-        display: inline-block;
+        padding: 3px;
+     
     }
-
-
-    #titulo {
-        margin-left: 32%;
-        text-align: center;
-    }
-
-    .boton-2 {
-        margin-left: 45%;
-        text-align: center;
-    }
-
+    
     .contenedor{
         margin-top: 30px;
         display: flex; 
@@ -605,5 +675,119 @@ nav ul li {
         max-width: 960px;   
     
     }
+ 
+    .card {
+        width: 180px;
+        height: 250px;
+        transition: transform 0.3s ease; 
+    }
+    
+    .contenedor-1 {
+        display: flex; 
+        justify-content: flex-start; 
+        gap: 40px; 
+        overflow-x: auto; 
+        margin-top: 30px;
+        margin-left: 42px;
+        margin-right: 35px;
+        height: 100%;
+        animation: slideUp 1s ease-in-out;
 
 }
+    .card-1 {
+        width: 150px; 
+        height: 250px;
+    
+    }
+    
+    
+    .tituloPrincipal {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    .subtituloPrincipal {
+        font-size: 0.8rem;
+        margin-bottom: 5rem;
+    
+    }
+    .tituloSection {
+        font-size: 0.9rem;
+        margin-bottom: 3%;
+        margin-left: 10px;
+    }
+    h3{
+        font-size:0.7rem ;
+    }
+  
+    button {
+        border-radius: 10px;
+        padding: 5px 5px;
+        
+    }
+    .boton-1, .boton-2{ 
+        margin: 3px auto;
+        font-size: 0.7rem;
+    }
+
+
+    .inputBuscador {
+        width: 80%;
+        
+    }
+    .pelicula {
+        width: 50%
+    }
+
+    .term-1{
+        padding: 10px;
+        font-size: 10px;
+       
+    }
+    
+    .redes-sociales img {
+        width: 15px;
+     
+    }
+    
+  
+    .form-insec {  
+        width: 60%;
+        max-width: 100%; 
+
+    }
+    .form-insec h5 {
+        font-size: 8px;
+        text-align: center;
+       
+    }
+
+    .form-container{
+        width: 60%;
+        max-width: 100%; 
+
+    }
+    .titulo{
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    
+    .register-message p {
+       
+        font-size:13px;
+    }
+
+    .register-message a {
+        font-size: 6px;}
+
+    label {
+      font-size: 12px;
+    }
+    
+    
+}
+
+  
+ 
+   
