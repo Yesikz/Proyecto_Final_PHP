@@ -13,10 +13,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap"
         rel="stylesheet">
+
+    <!-- ESTILOS CSS -->    
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/registro.css">
+    <link rel="stylesheet" href="../css/menu-hamburguesa.css">
 
-    <title>Acisey Movies</title>
+    <title>Registro Usuario|Acisey</title>
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
@@ -25,6 +28,15 @@
         <div class="logo-container">
             <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
         </div>
+
+        <!-- Botón hamburguesa visible solo en dispositivos móviles -->
+        <div class="mobile-menu-toggle">
+            <button class="hamburger" onclick="toggleMenu()">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner">&#9776;</span>
+                </span>
+            </button>
+        </div>        
 
         <nav id="navbar">
             <div class="menu">
@@ -164,7 +176,9 @@
         </div>
     </div>
 
+    <!--Scrips-->
     <script src="./js/registro.js"></script>
+    <script src="../js/menu-hamburguesa.js"></script>
 </body>
 
 </html>

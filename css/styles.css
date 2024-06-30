@@ -92,7 +92,6 @@ nav ul li.menu-1 a:hover {
     color: #fff; 
 }
 
-
 /**************************Main**********************/
 .imag-1 {
     color: rgb(255, 255, 255);
@@ -516,7 +515,7 @@ footer {
         }
     
     nav ul li {
-        display: block;
+        /*display: block;*/
         margin: 10px 0;
         }
     
