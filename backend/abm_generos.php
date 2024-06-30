@@ -32,7 +32,12 @@ $cosa = 'el género';
             margin: 0;
             padding: 0;
         }
-
+		.gestion-h2 {
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        display: inline-block;
+    }
         .container {
             width: 80%;
             margin: 0 auto;
@@ -168,8 +173,9 @@ $cosa = 'el género';
 
 <body>
     <div class="container">
-        <h2>Bienvenido, <?php echo $_SESSION['admin_nombre']; ?></h2>
-        <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p>
+		<h2 class="gestion-h2">Gestión de Géneros</h2>
+        <!-- <h2>Bienvenido, <?php echo $_SESSION['admin_nombre']; ?></h2>
+        <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p> -->
         <div class="links">
             <a href="admin_dashboard.php" class="button button-blue">Volver al dashboard</a>
         </div>
