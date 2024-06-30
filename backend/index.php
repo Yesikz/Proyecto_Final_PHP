@@ -5,14 +5,14 @@ session_start();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login de Administrador</title>
+    <title>Log in de Administrador</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
         .container {
             width: 300px;
-            margin: 0 auto;
+            margin: 0px auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -26,7 +26,7 @@ session_start();
 </head>
 <body>
     <div class="container">
-        <h2>Login de Administrador</h2>
+        <h2>Log in de Administrador</h2>
         <?php
         if (isset($_SESSION['error'])) {
             echo '<p class="error">' . $_SESSION['error'] . '</p>';

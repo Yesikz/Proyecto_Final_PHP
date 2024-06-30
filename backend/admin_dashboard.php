@@ -9,6 +9,7 @@ if (!isset($_SESSION['admin_email'])) {
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- <link rel="stylesheet" href="#"> -->
     <title>Dashboard de Administrador</title>
     <style>
         body {
