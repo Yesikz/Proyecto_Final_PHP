@@ -41,7 +41,7 @@ $cosa='el director';
             text-align: center;
         }
         .links {
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .links a {
             display: block;
@@ -82,7 +82,7 @@ $cosa='el director';
         <h2>Bienvenido, <?php echo $_SESSION['admin_nombre']; ?></h2>
         <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p>
         <div class="links">
-            <a href="admin_dashboard.php">Volver al dashboard</a>
+            <a href="admin_dashboard.php">Volver al dashboard!</a>
         </div>
     </div>
 
