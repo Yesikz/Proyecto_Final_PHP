@@ -71,4 +71,4 @@ session_start();
 
     <script src="../js/loginForm.js"></script>
 </body>
-</html>
+</html>-->
