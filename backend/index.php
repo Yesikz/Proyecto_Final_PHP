@@ -48,7 +48,7 @@ session_start();
 
         <main class="main-container">
             <div class="form-insec">
-                <h2>Iniciar Sesión</h2>
+                <h2>Iniciar Sesión Admin.</h2>
                 <?php
                 if (isset($_SESSION['error'])) {
                     echo '<p class="error">' . $_SESSION['error'] . '</p>';
