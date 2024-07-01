@@ -1,3 +1,52 @@
+<?php
+require 'config.php';
+
+// Variable para almacenar los mensajes de error
+$error = ''; 
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmarPassword = $_POST['confirmarPassword'];
+    $fecha_nacimiento = $_POST['fechaNacimiento'];
+    $pais = $_POST['pais'];
+
+    // Verificar si el correo electrónico ya está registrado
+    $sql_check_email = "SELECT * FROM usuarios WHERE email = '$email'";
+    $result = $conn->query($sql_check_email);
+
+    if ($result->num_rows > 0) {
+        $error = "El correo electrónico ya está registrado. Por favor, utiliza otro correo.";
+    } else {
+        // Verificar que las contraseñas coincidan
+        if ($password !== $confirmarPassword) {
+            $error = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
+        } else {
+            $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fecha_nacimiento, pais) 
+                    VALUES ('$nombre', '$apellido', '$email', '$passwordHashed', '$fecha_nacimiento', '$pais')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Registro exitoso!";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,45 +54,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../img/logoY.png" type="image/x-icon">
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap"
-        rel="stylesheet">
-
-    <!-- ESTILOS CSS -->    
+    <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/registro.css">
     <link rel="stylesheet" href="../css/menu-hamburguesa.css">
 
-    <title>Registro Usuario|Acisey</title>
+    <title>Registro Usuario | Acisey</title>
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
-
     <header>
         <div class="logo-container">
             <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
         </div>
-
-        <!-- Botón hamburguesa visible solo en dispositivos móviles -->
         <div class="mobile-menu-toggle">
             <button class="hamburger" onclick="toggleMenu()">
                 <span class="hamburger-box">
                     <span class="hamburger-inner">&#9776;</span>
                 </span>
             </button>
-        </div>        
-
+        </div>
         <nav id="navbar">
             <div class="menu">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <!--<li class><a href="../pages/tendencias.html">(API)</a></li>-->
-                    <!--<li><a href="registro.html">Registrarse</a></li>-->
                     <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
                     <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                 </ul>
@@ -53,28 +97,51 @@
 
     <main>
         <section class="login">
-            <form class="form-container" action="" method="post">
+            <form class="form-container" id="registroForm" action="registro_user.php" method="post">
                 <h1 class="titulo">Registro</h1><br>
 
-                <input type="text" id="nombre" placeholder="Nombre" required>
-                <input type="text" id="apellido" placeholder="Apellido" required>
-                <input type="email" id="email" placeholder="Correo electrónico" required>
-                <input type="password" id="password" placeholder="Contraseña" required>
-                <input type="password" id="confirmarPassword" placeholder="Confirmar contraseña" required>
-                <input type="date" id="fechaNacimiento" placeholder="Fecha de nacimiento" required>
-                <select id="pais" required>
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+                
+                <!-- Password y validacion-->
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" name="confirmarPassword" placeholder="Confirmar contraseña" required>
+                
+                <label for="fechaNacimiento">Fecha de nacimiento</label>
+                <input type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento" required>          
+                              
+                <select name="pais" required>
                     <option value="" disabled selected>Selecciona tu país</option>
+                    <?php
+                    // Consulta para obtener los países
+                    $sql_paises = "SELECT nombre FROM nacionalidades";
+                    $result_paises = $conn->query($sql_paises);
+
+                    // Verificar si hay resultados y luego iterar sobre ellos
+                    if ($result_paises->num_rows > 0) {
+                        while ($row = $result_paises->fetch_assoc()) {
+                            $nombre_pais = $row['nombre'];
+                            echo "<option value='$nombre_pais'>$nombre_pais</option>";
+                        }
+                    } else {
+                        echo "<option value=''>No hay países disponibles</option>";
+                    }
+                    ?>
                 </select>
 
                 <div class="terms-container">
                     <input type="checkbox" id="terminos" required>
-                    <label for="terminos">Acepto los<a href="#" id="termsLink">términos y condiciones</a></label>
+                    <label for="terminos">Acepto los <a href="#" id="termsLink">términos y condiciones</a></label>
                 </div>
 
-                <button type="submit" class="btn-registrarse">Registrarse</button>
+                <div class="error-message" id="passwordError"><?php echo $error; ?></div> <!-- Mensaje de error -->
+
+                <button type="submit" id="submitBtn" class="btn-registrarse">Registrarse</button>
 
                 <div class="register-message">
-                    <p>¿Ya tienes una cuenta?</p> <a href="./inicio.html">Inicia sesión</a></div>
+                    <p>¿Ya tienes una cuenta?</p> <a href="./inicio.html">Inicia sesión</a>
+                </div>
             </form>
         </section>
         <br>
@@ -177,8 +244,32 @@
     </div>
 
     <!--Scrips-->
-    <script src="./js/registro.js"></script>
     <script src="../js/menu-hamburguesa.js"></script>
+    <script>
+        // JavaScript para confirmar terminos y condiciones
+        document.getElementById('registroForm').addEventListener('submit', function(event) {
+            const terminos = document.getElementById('terminos');
+            if (!terminos.checked) {
+                alert('Debe aceptar los términos y condiciones para registrarse.');
+                event.preventDefault();
+            }
+        });
+
+        // JavaScript para validar las contraseñas antes de enviar el formulario
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            var password = document.getElementsByName("password")[0].value;
+            var confirmarPassword = document.getElementsByName("confirmarPassword")[0].value;
+            var errorDiv = document.getElementById("passwordError");
+
+            if (password !== confirmarPassword) {
+                errorDiv.textContent = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
+                event.preventDefault(); // Evita que el formulario se envíe
+            } else {
+                errorDiv.textContent = ""; // Borra el mensaje de error si las contraseñas coinciden
+            }
+        });
+    </script>
+
 </body>
 
 </html>
