@@ -25,7 +25,7 @@ session_start();
                 <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
             </div>
 
-            div class="mobile-menu-toggle">
+            <div class="mobile-menu-toggle">
                 <button class="hamburger" onclick="toggleMenu()">
                     <span class="hamburger-box">
                         <span class="hamburger-inner">&#9776;</span>
