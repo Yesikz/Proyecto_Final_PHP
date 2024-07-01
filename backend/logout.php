@@ -1,6 +1,6 @@
 <?php
 session_start();
 session_destroy();
-header("Location: inicio_sesion_adm.php");
+header("Location: backend/index.php");
 exit();
 ?>

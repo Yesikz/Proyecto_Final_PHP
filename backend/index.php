@@ -26,7 +26,7 @@ session_start();
 </head>
 <body>
     <div class="container">
-        <h2>Log in de Administrador</h2>
+        <h2>Login de Administrador</h2>
         <?php
         if (isset($_SESSION['error'])) {
             echo '<p class="error">' . $_SESSION['error'] . '</p>';
