@@ -169,7 +169,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Términos y Condiciones</h2>
-            <!-- Aquí va el contenido del modal -->
+            <ol>
+                <li><strong>Aceptación de los Términos</strong><br>
+                    Al registrarse en nuestra página de películas, el usuario acepta y se compromete a cumplir con los
+                    siguientes términos y condiciones. Si no está de acuerdo con alguna parte de estos términos, no debe
+                    utilizar nuestro servicio.</li>
+
+                <li><strong>Elegibilidad</strong><br>
+                    Para registrarse en nuestra página de películas, el usuario debe tener al menos 18 años de edad. Al
+                    aceptar estos términos, el usuario declara y garantiza que tiene la edad legal para formar un
+                    contrato vinculante.</li>
+
+                <li><strong>Cuenta de Usuario</strong><br>
+                    <ul>
+                        <strong>Información de Registro:</strong> Al crear una cuenta, el usuario debe proporcionar
+                        información precisa, actual y completa según se solicite en el formulario de registro. El
+                        usuario es responsable de mantener la confidencialidad de su cuenta y contraseña, y de todas
+                        las actividades que ocurran bajo su cuenta.
+                        <strong>Uso Prohibido:</strong> El usuario se compromete a no utilizar la cuenta para ningún
+                        propósito ilegal o no autorizado. No puede, en el uso del servicio, violar ninguna ley en su
+                        jurisdicción.
+                    </ul>
+                </li>
+
+                <li><strong>Privacidad</strong><br>
+                    <ul>
+                        <strong>Política de Privacidad:</strong> Nuestra política de privacidad describe cómo
+                        manejamos y protegemos la información personal del usuario. Al registrarse, el usuario
+                        acepta los términos establecidos en nuestra política de privacidad.
+                        <strong>Cookies:</strong> Utilizamos cookies y tecnologías similares para mejorar la
+                        experiencia del usuario en nuestra página. Al utilizar nuestro servicio, el usuario acepta
+                        el uso de cookies de acuerdo con nuestra política de cookies.
+                    </ul>
+                </li>
+
+                <li><strong>Propiedad Intelectual</strong><br>
+                    <ul>
+                        <strong>Contenido del Usuario:</strong> El usuario conserva todos los derechos sobre
+                        cualquier contenido que publique en nuestra página. Sin embargo, al publicar contenido, el
+                        usuario nos otorga una licencia mundial, no exclusiva, libre de regalías, y transferible
+                        para usar, reproducir, distribuir, preparar trabajos derivados de, mostrar y ejecutar dicho
+                        contenido en relación con la prestación del servicio.
+                        <strong>Derechos de Autor:</strong> Todo el contenido y material en nuestra página,
+                        incluyendo pero no limitado a textos, gráficos, logotipos, y software, es propiedad de
+                        nuestra página o sus licenciantes y está protegido por leyes de derechos de autor.
+                    </ul>
+                </li>
+
+                <li><strong>Terminación</strong><br>
+                    Nos reservamos el derecho de suspender o terminar la cuenta del usuario en cualquier momento, sin
+                    previo aviso, por cualquier violación de estos términos y condiciones o por cualquier otra razón que
+                    consideremos apropiada.</li>
+
+                <li><strong>Modificaciones a los Términos</strong><br>
+                    Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Cualquier
+                    cambio será efectivo inmediatamente después de su publicación en nuestra página. Es responsabilidad
+                    del usuario revisar regularmente los términos y condiciones para estar al tanto de cualquier cambio.
+                </li>
+
+                <li><strong>Limitación de Responsabilidad</strong><br>
+                    Nuestra página no será responsable por ningún daño directo, indirecto, incidental, especial, o
+                    consecuente que resulte del uso o la imposibilidad de usar nuestro servicio, incluso si hemos sido
+                    informados de la posibilidad de tales daños.</li>
+
+                <li><strong>Ley Aplicable</strong><br>
+                    Estos términos y condiciones se regirán e interpretarán de acuerdo con las leyes del país en el que
+                    operamos, sin considerar sus disposiciones sobre conflicto de leyes.</li>
+
+                <li><strong>Contacto</strong><br>
+                    Si tiene alguna pregunta sobre estos términos y condiciones, por favor contáctenos a través de
+                    nuestro formulario de contacto en la página.</li>
+            </ol>
         </div>
     </div>
 
