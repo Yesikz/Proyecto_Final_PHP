@@ -459,7 +459,8 @@ footer {
 
 .form-insec input[type="text"],
 .form-insec input[type="password"],
-.form-insec input[type="submit"] {
+.form-insec input[type="submit"],
+.form-insec input[type="email"]{
     width: 100%;
     padding: 10px;
     margin: 10px 0;
