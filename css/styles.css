@@ -460,7 +460,8 @@ footer {
 .form-insec input[type="text"],
 .form-insec input[type="password"],
 .form-insec input[type="submit"],
-.form-insec input[type="email"]{
+.form-insec input[type="email"]
+.btn_iniciar_sesion{
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -477,7 +478,8 @@ footer {
     color: #888;
 }
 
-.form-insec input[type="submit"] {
+.form-insec input[type="submit"],
+.btn_iniciar_sesion{
     background-image: linear-gradient(to bottom, #b37ef0, #476bce);
     color: white;
     cursor: pointer;
