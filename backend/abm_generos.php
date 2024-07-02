@@ -51,6 +51,11 @@ display: inline-block;
     text-align: center;
     padding: 20px;
 }
+.titulo-h1 {
+    display: grid;
+    place-items: center;
+    color: white;
+}
 
 .links {
     margin-top: 20px;
@@ -206,37 +211,33 @@ table tr:hover {
     $accion=0;
 }
 
-    if ($accion == 1)/// alta 
-    {
-			///// var_dump($_POST);
-			echo "<br>";
-        $valor2 = $_POST['valor2'];
-        $valor3 = $_POST['valor3'];
-        $valor4 = $_POST['valor4'];
+if ($accion == 1) { // alta 
+    // var_dump($_POST);
+    echo "<br>";
+    $valor2 = $_POST['valor2'];
+    $valor3 = $_POST['valor3'];
+    $valor4 = $_POST['valor4'];
 
-        $my_query = "INSERT INTO `$tabla1` ( `$campo2` , `$campo3`, `$campo4`  )   VALUES ( '$valor2','$valor3','$valor4' )";
+    $my_query = "INSERT INTO `$tabla1` ( `$campo2` , `$campo3`, `$campo4`  ) VALUES ( '$valor2','$valor3','$valor4' )";
 
-        if ($conn->query($my_query) === TRUE) {
-    ?>
-            <div class="container">
-                <img src='./imagenes/ok.jpg'>Se agregó <?php echo $cosa . " " .  $valor2 ?><br>
-            </div>
-        <?php
-        } else {
+    if ($conn->query($my_query) === TRUE) {
         ?>
-            <div class="container">
-                <?php
-                echo $conn->error;
-                ?>
-                <br><img src='./imagenes/icon-good.svg'> Error, no se agregó <?php echo $cosa; ?>, tome nota del error<br>
-            </div>
+        <div class="container">
+            <img src='./imagenes/icon-good.svg'>Se agregó <?php echo $cosa . " " .  $valor2 ?><br>
+        </div>
         <?php
-        } 
-        else {
-				echo $conn->error;
-				echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se agregó $cosa, tome nota del error<br>";
-			}
+    } else {
+        ?>
+        <div class="container">
+            <?php
+            echo $conn->error;
+            ?>
+            <br><img src='./imagenes/icon-bad.svg'> Error, no se agregó <?php echo $cosa; ?>, tome nota del error<br>
+        </div>
+        <?php
     }
+}
+
 
     if ($accion == 2) /// modificacion
     {
@@ -428,7 +429,6 @@ table tr:hover {
         </div>
         <div class="links">
             <a href="abm_peliculas.php" class="button button-blue">Gestionar Películas</a>
-            <a href="abm_generos.php" class="button button-blue">Gestionar Géneros</a>
             <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
             <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
         </div>

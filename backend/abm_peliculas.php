@@ -62,16 +62,22 @@ $cosa='la pelicula';
     place-items: center;
     color: white;
 }
+.titulo-h3{
+    color: white;
+    margin-top: 20px;
+}
 
 .links {
     margin-top: 20px;
 }
 .links a {
-    display: block;
-    margin: 10px 0;
+    display: inline-block;
+    margin: 10px;
     text-decoration: none;
-    color: #007BFF;
     font-size: 18px;
+    padding: 8px 16px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
 }
 .links a:hover {
     background-color: #007BFF;
@@ -675,7 +681,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='4'>4</option>
             <option value='4,5'>4,5</option>
             <option value='5'>5</option>
-        </select> Estrellas<br>
+        </select> <h3 class="titulo-h3">Estrellas</h3><br>
         <?php
         echo "<input name='valor11' type='text' size='2' maxlength='2' placeholder='Orden'><br>";
         ?>
@@ -684,7 +690,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='0'>Inactivo</option>
         </select><br>
         <div>
-            <h3>Subir archivo</h3>
+            <h3 class="titulo-h3">Subir archivo</h3>
             <input type='file' name='file'>
             <input type='hidden' name='accion' value='1'>
             <br>
@@ -784,13 +790,12 @@ if ($result)
 
 ?>
  <div class="container">
-        <div class="links">
-
-            <a href="abm_generos.php" class="button button-blue">Gestionar Géneros</a>
-            <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
-            <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
-        </div>
-        <a href="logout.php" class="button button-red">Logout</a>
+    <div class="links">
+        <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
+        <a href="abm_generos.php" class="button button-blue">Gestionar Géneros</a>
+        <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
     </div>
+    <a href="logout.php" class="button button-red">Logout</a>
+</div>
 </body>
 </html>
