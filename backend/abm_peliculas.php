@@ -48,196 +48,188 @@ $cosa='la pelicula';
     <title>Dashboard de Administrador</title>
     <style>
  body {
-            font-family: Arial, sans-serif;
-            background-color: #1c1c22;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #1c1c22;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 20px;
-        }
+.titulo-h1 {
+    display: grid;
+    place-items: center;
+    color: white;
+}
 
-        .titulo-h1 {
-            display: grid;
-            place-items: center;
-        }
+.links {
+    margin-top: 20px;
+}
+.links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 18px;
+}
+.links a:hover {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
 
-        .links {
-            margin-top: 20px;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
 
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 8px 16px;
-            border: 2px solid #007BFF;
-            border-radius: 4px;
-        }
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+}
 
-        .links a:hover {
-            background-color: #007BFF;
-            color: white;
-            border-color: #007BFF;
-        }
+table th {
+    background-color: #007BFF;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
-        }
+table tr:nth-child(even) {
+    background-color: #1c1c22;
+}
 
-        table th,
-        table td {
-            padding: 10px;
-            text-align: center;
-        }
+table tr:hover {
+    background-color: #555;
+}
 
-        table th {
-            background-color: #007BFF;
-        }
+.button {
+    padding: 5px 10px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-        table tr:nth-child(even) {
-            background-color: #1c1c22;
-        }
+.button-blue {
+    color: #ffffff;
+    border: 2px solid #007BFF;
+    background-color: transparent;
+}
 
-        table tr:hover {
-            background-color: #555;
-        }
+.button-blue:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
 
-        .button {
-            padding: 5px 10px;
-            border: none;
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+.button-red {
+    background-color: transparent;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+}
 
-        .button-blue {
-            color: #ffffff;
-            border: 2px solid #007BFF;
-            background-color: transparent;
-        }
+.button-red:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
 
-        .button-blue:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
+.button-green {
+    background-color: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
 
-        .button-red {
-            background-color: transparent;
-            color: #FF0000;
-            border: 2px solid #FF0000;
-        }
+.button-green:hover {
+    background-color: #28a745;
+    color: #ffffff;
+}
 
-        .button-red:hover {
-            background-color: #FF0000;
-            color: #ffffff;
-        }
+form {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
 
-        .button-green {
-            background-color: transparent;
-            color: #28a745;
-            border: 2px solid #28a745;
-        }
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
 
-        .button-green:hover {
-            background-color: #28a745;
-            color: #ffffff;
-        }
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #1c1c22;
+    color: white;
+}
 
-        form {
-            background-color: #2c2c2c;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+form input[type="text"]::placeholder,
+form input[type="number"]::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
 
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+form select {
+    cursor: pointer;
+}
 
-        form input[type="text"],
-        form input[type="number"],
-        form textarea,
-        form select {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #555;
-            border-radius: 4px;
-            background-color: #1c1c22;
-            color: white;
-        }
+form input[type="submit"] {
+    width: auto;
+    margin-top: 10px;
+}
 
-        form input[type="text"]::placeholder,
-        form input[type="number"]::placeholder,
-        form textarea::placeholder {
-            color: #aaa;
-        }
+form .button-blue {
+    background-color: transparent;
+    border: 2px solid #007BFF;
+    color: #007BFF;
+}
 
-        form select {
-            cursor: pointer;
-        }
+form .button-blue:hover {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
 
-        form input[type="submit"] {
-            width: auto;
-            margin-top: 10px;
-        }
+form .button-green {
+    background-color: transparent;
+    border: 2px solid #28a745;
+    color: #28a745;
+}
 
-        form .button-blue {
-            background-color: transparent;
-            border: 2px solid #007BFF;
-            color: #007BFF;
-        }
+form .button-green:hover {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
 
-        form .button-blue:hover {
-            background-color: #007BFF;
-            color: white;
-            border-color: #007BFF;
-        }
+form .button-red {
+    background-color: transparent;
+    border: 2px solid #FF0000;
+    color: #FF0000;
+}
 
-        form .button-green {
-            background-color: transparent;
-            border: 2px solid #28a745;
-            color: #28a745;
-        }
-
-        form .button-green:hover {
-            background-color: #28a745;
-            color: white;
-            border-color: #28a745;
-        }
-
-        form .button-red {
-            background-color: transparent;
-            border: 2px solid #FF0000;
-            color: #FF0000;
-        }
-
-        form .button-red:hover {
-            background-color: #FF0000;
-            color: white;
-            border-color: #FF0000;
-        }
+form .button-red:hover {
+    background-color: #FF0000;
+    color: white;
+    border-color: #FF0000;
+}
 
     </style>
-    <script>
+<script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('paises.json')
                 .then(response => response.json())
@@ -259,15 +251,13 @@ $cosa='la pelicula';
                 .catch(error => console.error('Error al cargar el archivo JSON:', error));
         });
     </script>
+
 </head>
 <body>
     <div class="container">
         <!-- <h2>Bienvenido, <?php echo $_SESSION['admin_nombre']; ?></h2>
         <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p> -->
-        <div class="links">
-            <a href="admin_dashboard.php">Volver al dashboard</a>
-        </div>
-    </div>
+      </div>
 
     <?php
     if (isset($_POST['accion'])) {
@@ -314,7 +304,7 @@ if ($accion == 1) { // alta
 
         if ($conn->query($my_query) === TRUE) {
         ?>
-        <img src='./imagenes/ok.jpg'>Se agregó <?php echo $cosa . " " . $valor2 ?><br>        
+        <img src='./imagenes/icon-good.svg'>Se agregó <?php echo $cosa . " " . $valor2 ?><br>        
         <?php        
         // cargo la foto ////
 
@@ -355,7 +345,7 @@ if ($accion == 1) { // alta
     } 
     else {
             echo $conn->error;
-            echo "<br><img src='./imagenes/oo.jpg'> Error, no se agregó $cosa, tome nota del error<br>";
+            echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se agregó $cosa, tome nota del error<br>";
         }
     }
 
@@ -385,11 +375,11 @@ if($debug){
 
         if ($conn->query($my_query) === TRUE) {
         ?>
-        <img src='./imagenes/ok.jpg'>Se modificó <?php echo $cosa . " " . $valor2 ?><br>        
+        <img src='./imagenes/icon-good.svg'>Se modificó <?php echo $cosa . " " . $valor2 ?><br>        
         <?php
         } else {
             echo $conn->error;
-            echo "<br><img src='./imagenes/oo.jpg'> Error, no se modificó $cosa, tome nota del error<br>";
+            echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se modificó $cosa, tome nota del error<br>";
         }
     }
 
@@ -417,12 +407,12 @@ if ($accion == 5)
             $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
 
             if ($conn->query($my_query) === TRUE) {
-            echo "<img src='./imagenes/ok.jpg'>  Se borró $cosa siguiente....<br>";
+            echo "<img src='./imagenes/icon-good.svg'>  Se borró $cosa siguiente....<br>";
             echo "Código:  $valor1 <br>
                   Nombre:  $valor2 <br><br>";
             } else {
                 echo $conn->error;
-                echo "<br><img src='./imagenes/oo.jpg'> Error, no se borró $cosa, tome nota del error <br>";
+                echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se borró $cosa, tome nota del error <br>";
             }
         }
 /////////////////////////////////////
@@ -649,7 +639,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
     <div class="container">
         <h1 class="titulo-h1">Alta de Películas</h1>
         <div class="links">
-            <a href="admin_dashboard.php">Volver al dashboard</a>
+            <a href="admin_dashboard.php" class= "button button-blue">Volver al dashboard</a>
         </div>
 
         <?php
@@ -693,13 +683,14 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='1'>Activo</option>
             <option value='0'>Inactivo</option>
         </select><br>
-        <?php
-        echo "Selecciona el afiche: <input type='file' name='file'><br>";
-        echo "<input type='hidden' name='accion' value='1'><br><input type='submit' class='button button-green' value='Cargar'>";
-        echo "</form>";
-        echo "<br><br>";
-        ?>
-    </div>
+        <div>
+            <h3>Subir archivo</h3>
+            <input type='file' name='file'>
+            <input type='hidden' name='accion' value='1'>
+            <br>
+            <input type='submit' class='button button-green' value='Cargar'>
+            </form>
+        </div>
 
     <?php
     //Muestra las peliculas cargadas
@@ -714,9 +705,11 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
 
     $result = $conn->query($my_query);
 
-    if ($result) {
+if ($result)
+{   
         echo "<br>";
-    echo "<b>Peliculas cargadas </b>:";
+    ?><div class="container"><h1 class="titulo-h1">Alta de Películas</h1></div>
+    <?php
         echo "<table border=1>";
     echo "<tr><td align=center> Codigo</td>
                   <td align=center>Nombre</td>
@@ -787,8 +780,10 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
     } else {
     echo "<b>No hay Peliculas cargadas</b><br>";
     }
-    ?>
-    <div class="container">
+    
+
+?>
+ <div class="container">
         <div class="links">
 
             <a href="abm_generos.php" class="button button-blue">Gestionar Géneros</a>

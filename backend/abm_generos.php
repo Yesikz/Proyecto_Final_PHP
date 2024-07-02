@@ -32,149 +32,149 @@ $cosa = 'el género';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Administrador</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1c1c22;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-		.gestion-h2 {
-        margin-bottom: 20px;
-        text-align: center;
-        position: relative;
-        display: inline-block;
-    }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 20px;
-        }
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c22;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.gestion-h2 {
+margin-bottom: 20px;
+text-align: center;
+position: relative;
+display: inline-block;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
 
-        .links {
-            margin-top: 20px;
-        }
+.links {
+    margin-top: 20px;
+}
 
-        .links a {
-            display: inline-block;
-            margin: 10px;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 8px 16px;
-            border: 2px solid #007BFF;
-            border-radius: 4px;
-        }
+.links a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+}
 
-        .links a:hover {
-            background-color: #007BFF;
-            color: white;
-            border-color: #007BFF;
-        }
+.links a:hover {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
 
-        .button {
-            padding: 5px 10px;
-            border: none;
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .button-blue {
-    		color: #ffffff;
-    		border: 2px solid #007BFF;
-		}
-		.button-blue:hover {
-    		background-color: #0056b3; /* Cambia el color al pasar el mouse */
-    		border-color: #0056b3; /* Cambia el color del borde al pasar el mouse */
-		}
-        .button-red {
-            background-color: transparent;
-            color: #FF0000;
-            border: 2px solid #FF0000;
-        }
-        .button-red:hover {
-            background-color: #FF0000;
-            color: #ffffff;
-        }
-        .button-green {
-            background-color: transparent;
-            color: #28a745;
-            border: 2px solid #28a745;
-        }
-        .button-green:hover {
-            background-color: #28a745;
-            color: #ffffff;
-        }
+.button {
+    padding: 5px 10px;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button-blue {
+    color: #ffffff;
+    border: 2px solid #007BFF;
+}
+.button-blue:hover {
+    background-color: #0056b3; /* Cambia el color al pasar el mouse */
+    border-color: #0056b3; /* Cambia el color del borde al pasar el mouse */
+}
+.button-red {
+    background-color: transparent;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+}
+.button-red:hover {
+    background-color: #FF0000;
+    color: #ffffff;
+}
+.button-green {
+    background-color: transparent;
+    color: #28a745;
+    border: 2px solid #28a745;
+}
+.button-green:hover {
+    background-color: #28a745;
+    color: #ffffff;
+}
 
-        .table-container {
-            margin-top: 20px;
-            width: 100%;
-            overflow-x: auto;
-        }
+.table-container {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #333;
-            color: white;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+}
 
-        table th,
-        table td {
-            padding: 10px;
-            text-align: center;
-        }
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+}
 
-        table th {
-            background-color: #007BFF;
-        }
+table th {
+    background-color: #007BFF;
+}
 
-        table tr:nth-child(even) {
-            background-color: #1c1c22;
-        }
+table tr:nth-child(even) {
+    background-color: #1c1c22;
+}
 
-        table tr:hover {
-            background-color: #555;
-        }
+table tr:hover {
+    background-color: #555;
+}
 
-        .form-section {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-        }
+.form-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+}
 
-        .form-section label {
-            display: inline-block;
-            width: 120px;
-            margin-bottom: 10px;
-        }
+.form-section label {
+    display: inline-block;
+    width: 120px;
+    margin-bottom: 10px;
+}
 
-        .form-section input[type='text'],
-        .form-section select {
-            width: calc(100% - 130px);
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            color: #333;
-            background-color: #fff;
-        }
+.form-section input[type='text'],
+.form-section select {
+    width: calc(100% - 130px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+}
 
-        .form-section button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            border: none;
-            color: white;
-            background-color: #007BFF;
-        }
+.form-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    background-color: #007BFF;
+}
     </style>
 </head>
 
@@ -190,16 +190,26 @@ $cosa = 'el género';
 
     <?php
     if (isset($_POST['accion'])) {
+    // La variable está presente, puedes realizar acciones con ella
         $accion = $_POST['accion'];
         if ($debug) {
             echo "El valor de 'accion' es: " . $accion;
         }
-    } else {
-        $accion = 0;
-    }
+
+    } else
+     {
+    	// La variable no está presente, realiza alguna acción predeterminada o muestra un mensaje de error
+    	if($debug)
+    	{
+   			 echo "La variable 'accion' no se ha recibido.";
+    	}
+    $accion=0;
+}
 
     if ($accion == 1)/// alta 
     {
+			///// var_dump($_POST);
+			echo "<br>";
         $valor2 = $_POST['valor2'];
         $valor3 = $_POST['valor3'];
         $valor4 = $_POST['valor4'];
@@ -218,10 +228,14 @@ $cosa = 'el género';
                 <?php
                 echo $conn->error;
                 ?>
-                <br><img src='./imagenes/oo.jpg'> Error, no se agregó <?php echo $cosa; ?>, tome nota del error<br>
+                <br><img src='./imagenes/icon-good.svg'> Error, no se agregó <?php echo $cosa; ?>, tome nota del error<br>
             </div>
         <?php
-        }
+        } 
+        else {
+				echo $conn->error;
+				echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se agregó $cosa, tome nota del error<br>";
+			}
     }
 
     if ($accion == 2) /// modificacion
@@ -236,7 +250,7 @@ $cosa = 'el género';
         if ($conn->query($my_query) === TRUE) {
         ?>
             <div class="container">
-                <img src='./imagenes/ok.jpg'>Se modificó <?php echo $cosa . " " .  $valor2 ?><br>
+                <img src='./imagenes/icon-good.svg'>Se modificó <?php echo $cosa . " " .  $valor2 ?><br>
             </div>
         <?php
         } else {
@@ -245,7 +259,7 @@ $cosa = 'el género';
                 <?php
                 echo $conn->error;
                 ?>
-                <br><img src='./imagenes/oo.jpg'> Error, no se modificó <?php echo $cosa; ?>, tome nota del error<br>
+                <br><img src='./imagenes/icon-bad.svg'> Error, no se modificó <?php echo $cosa; ?>, tome nota del error<br>
             </div>
         <?php
         }
@@ -254,10 +268,10 @@ $cosa = 'el género';
     if ($accion == 5) /// baja
     {
         $valor1 = $_POST['valor1'];
-        $query = "SELECT * FROM peliculas WHERE genero=$valor1";
-        $result = $conn->query($query);
+			$query="select * from peliculas where genero=$valor1";
+			$result = $conn->query($my_query);
 
-        if ($result->num_rows > 0) {
+        if($result){
         ?>
             <div class="container">
                 Hay películas que tienen asignado ese género. No se puede borrar hasta tanto modifique las películas.<br>
@@ -275,7 +289,7 @@ $cosa = 'el género';
             if ($conn->query($my_query) === TRUE) {
             ?>
                 <div class="container">
-                    <img src='./imagenes/ok.jpg'> Se borró <?php echo $cosa; ?> siguiente....<br>
+                    <img src='./imagenes/icon-good.svg'> Se borró <?php echo $cosa; ?> siguiente....<br>
                     Código: <?php echo $campot1; ?><br>
                     Nombre: <?php echo $campot2; ?><br><br>
                 </div>
@@ -286,7 +300,7 @@ $cosa = 'el género';
                     <?php
                     echo $conn->error;
                     ?>
-                    <br><img src='./imagenes/oo.jpg'> Error, no se borró <?php echo $cosa; ?>, tome nota del error <br>
+                    <br><img src='./imagenes/icon-bad.svg'> Error, no se borró <?php echo $cosa; ?>, tome nota del error <br>
                 </div>
             <?php
             }
@@ -350,8 +364,9 @@ $cosa = 'el género';
     <?php
     }
     ?>
-
+    
     <div class="container">
+        <!-- muestra lo cargado -->
         <div class="table-container">
             <?php
             $my_query = "SELECT * FROM $tabla1 ORDER BY 3";
