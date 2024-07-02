@@ -1,4 +1,11 @@
 <?php
+/**
+* @version		$Id: abmgeneros.php  
+* @package		
+* @copyright	
+* 
+* Version Para php 5.
+*/
 session_start();
 if (!isset($_SESSION['admin_email'])) {
     header("Location: login.php");
