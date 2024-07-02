@@ -1,0 +1,109 @@
+.mainDetalle {
+  color: rgb(255, 255, 255);
+}
+
+.detalle {
+  padding-top: 50px;
+  background: linear-gradient(to right top, #6d6969a7, #6d6969a7),
+    url("/img/mario.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  margin-bottom:100px;
+}
+.contenedorDetalle {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 60px;
+}
+.imgMario {
+  border-radius: 30px;
+}
+.textoDetalle h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+.textoDetalle h2 {
+    margin-top: 20px;
+}
+
+.trailer {
+    padding-bottom: 100px;
+    width: 75%;
+    margin:auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 70px;
+}
+.contenedorTrailer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ justify-content: center; 
+}
+
+.info {
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px 0px;
+}
+table {
+  border-spacing: 10px;
+  width: 100%;
+}
+
+td {
+  padding: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .detalle {
+    height: initial;
+  }
+  .contenedorDetalle {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .imgMario {
+    width: 100%;
+    height: 300px;
+  }
+  .textoDetalle h1 {
+    font-size: 1.5rem;
+  }
+  .textoDetalle h2 {
+    font-size: 1rem;
+  }
+  .contenedorBoton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ justify-content: center; 
+}
+
+  .trailer {
+    width: 95%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .contenedorTrailer h2 {
+    margin-bottom: 20px;
+  }
+  .contenedorTrailer iframe {
+    width: 100%;
+    height: 300px;
+  }
+  table {
+    width: 0%;
+    border-spacing:0px ;
+  }
+}
