@@ -38,7 +38,7 @@ session_start();
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="../pages/tendencias.html">(API)</a></li>
-                        <li><a href="../pages/registro_usuario.html">Registrarse</a></li>
+                        <li><a href="../backend/user_registro.php">Registrarse</a></li>
                         <li class="peli-adm"><a href="index.php">Administrar</a></li>
                         <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                     </ul>
