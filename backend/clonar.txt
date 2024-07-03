@@ -1,0 +1,20 @@
+👉🏻 Clonar el repo: 
+git clone https://github.com/Yesikz/Proyecto_Final_PHP.git
+
+👉🏻 Tenes que ir hasta el repo: 
+cd (poner la ruta al repositorio)
+
+👉🏻 Hacer rama adrian: 
+git branch adrian
+
+👉🏻 Cambiar de rama: 
+git checkout adrian
+
+👉🏻 Realizar los cambios
+
+👉🏻 Para subir los cambios:
+1. git status (aparece en rojo)
+3. git add . (agrega archivos para ingresar a GitHub)
+4. git status (tiene que estar en verde)
+5. git commit –m “Detalle”
+6. git push origin adrian

@@ -1,3 +1,22 @@
+// VALIDAR LA CONTRASEÑA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Obtener los elementos de contraseña y confirmación
+const password = document.getElementById('password');
+const confirmarPassword = document.getElementById('confirmarPassword');
+
+// Función para verificar la coincidencia de contraseñas
+function validarContraseña() {
+    if (password.value !== confirmarPassword.value) {
+        confirmarPassword.setCustomValidity("Las contraseñas no coinciden");
+    } else {
+        confirmarPassword.setCustomValidity('');
+    }
+}
+
+// Agregar evento de input para validar mientras el usuario escribe
+password.addEventListener('input', validarContraseña);
+confirmarPassword.addEventListener('input', validarContraseña);
+
+
 // PAISES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 fetch('../json/paises.json')
     .then(response => response.json())
@@ -15,8 +34,8 @@ fetch('../json/paises.json')
     })
     .catch(error => console.error('Error al cargar el archivo JSON:', error));
 
-// MODAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// MODAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 var modal = document.getElementById("termsModal");
 
 // Obtener el botón que abre el modal
@@ -25,10 +44,20 @@ var btn = document.getElementById("termsLink");
 // Obtener el elemento <span> que cierra el modal
 var span = document.getElementsByClassName("close")[0];
 
+// Función para abrir el modal
+function openModal() {
+    modal.style.display = "block";
+}
+
 // Cuando el usuario haga clic en el botón, abre el modal
 btn.onclick = function (event) {
     event.preventDefault(); // Evitar el comportamiento por defecto del enlace
-    modal.style.display = "block";
+    openModal();
+}
+
+// Cuando el usuario haga clic en el li del footer, abre el modal
+document.getElementById("footerTerminos").onclick = function () {
+    openModal();
 }
 
 // Cuando el usuario haga clic en <span> (x), cierra el modal
