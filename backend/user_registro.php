@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="menu">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
+                    <li class="peli-adm"><a href="../backend/index.php">Administrar</a></li>
                     <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                 </ul>
             </div>
@@ -140,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" id="submitBtn" class="btn-registrarse">Registrarse</button>
 
                 <div class="register-message">
-                    <p>¿Ya tienes una cuenta?</p> <a href="./inicio.html">Inicia sesión</a>
+                    <p>¿Ya tienes una cuenta?</p> <a href="../pages/inicio_sesion_user.html">Inicia sesión</a>
                 </div>
             </form>
         </section>
