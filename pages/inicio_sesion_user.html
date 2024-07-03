@@ -39,8 +39,8 @@
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
                       <!--  <li class><a href="../pages/tendencias.html">(API)</a></li>-->
-                        <li><a href="../backend/registro_user.php">Registrarse</a></li>
-                        <li class="peli-adm"><a href="../pages/inicio_sesion_adm.html">Administrar</a></li>
+                        <li><a href="../backend/user_registro.php">Registrarse</a></li>
+                        <li class="peli-adm"><a href="../backend/index.php">Administrar</a></li>
                         <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
                     </ul>
                 </div>
@@ -55,9 +55,9 @@
                     <h5>El correo electronico es necesario</h5>
                     <input id="password" type="password" name="contrasena" placeholder="Contraseña" required>
                     <h5>La contraseña es necesaria</h5>
-                    <input id="button" type="submit" value="Iniciar Sesión">
+                    <button id="button" onclick="window.location.href='user_inicio_sesion.php'">Iniciar Sesión</button>
                 </form>
-                <a href="../backend/registro_user.php"><button class="boton-registrate">¡Regístrate ahora!</button></a>
+                <a href="../backend/user_registro.php"><button class="boton-registrate">¡Regístrate ahora!</button></a>
             </div>
         </main>
 
