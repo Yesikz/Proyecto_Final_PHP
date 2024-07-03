@@ -6,12 +6,6 @@
 * 
 * Version Para php 5.
 */
-
-
-
-
-
-
 session_start();
 if (!isset($_SESSION['admin_email'])) {
     header("Location: login.php");
@@ -235,28 +229,7 @@ form .button-red:hover {
 }
 
     </style>
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('paises.json')
-                .then(response => response.json())
-                .then(data => {
-                    let selects = document.querySelectorAll('.pais-select');
-                    selects.forEach(select => {
-                        let nacionalidadActual = select.getAttribute('data-nacionalidad');
-                    data.forEach(pais => {
-                        let option = document.createElement('option');
-                        option.value = pais.codigo;
-                        option.textContent = pais.nombre;
-                            if (pais.codigo === nacionalidadActual) {
-                                option.selected = true;
-                            }
-                        select.appendChild(option);
-                        });
-                    });
-                })
-                .catch(error => console.error('Error al cargar el archivo JSON:', error));
-        });
-    </script>
+
 
 </head>
 <body>
@@ -283,7 +256,7 @@ form .button-red:hover {
     }
 
 if ($accion == 1) { // alta
-        var_dump($_POST);
+        // var_dump($_POST);
         echo "<br>";
         $valor2 = $_POST['valor2'];
         $valor3 = $_POST['valor3'];
@@ -314,37 +287,37 @@ if ($accion == 1) { // alta
         <?php        
         // cargo la foto ////
 
-            $id_pelicula=$conn->insert_id;
-            if($debug)
-                {echo "id_pelicula: $id_pelicula<br> ";}
+        //     $id_pelicula=$conn->insert_id;
+        //     if($debug)
+        //         {echo "id_pelicula: $id_pelicula<br> ";}
         
-           $id_pelicula = $conn->insert_id;
+        //    $id_pelicula = $conn->insert_id;
 
-            if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
+        //     if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
 
-                // Verifica si el archivo no está vacío
-                if ($_FILES['file']['size'] > 0) {
-                    // Lee el contenido del archivo
-                    $fileContent = file_get_contents($_FILES['file']['tmp_name']);
-                    $posterData = base64_encode($fileContent);
+        //         // Verifica si el archivo no está vacío
+        //         if ($_FILES['file']['size'] > 0) {
+        //             // Lee el contenido del archivo
+        //             $fileContent = file_get_contents($_FILES['file']['tmp_name']);
+        //             $posterData = base64_encode($fileContent);
 
-                    // Escapa el nombre del archivo para evitar inyección SQL
-                    $poster = $conn->real_escape_string($_FILES['file']['name']);
+        //             // Escapa el nombre del archivo para evitar inyección SQL
+        //             $poster = $conn->real_escape_string($_FILES['file']['name']);
 
-                    // Actualiza el campo poster del registro recién insertado
-                    $update_sql = "UPDATE peliculas SET poster='$posterData' WHERE id_pelicula='$id_pelicula'";
+        //             // Actualiza el campo poster del registro recién insertado
+        //             $update_sql = "UPDATE peliculas SET poster='$posterData' WHERE id_pelicula='$id_pelicula'";
 
-                    if ($conn->query($update_sql) === TRUE) {
-                        echo "El poster ha sido agregado exitosamente.";
-                    } else {
-                        echo "Error al agregar el poster: " . $conn->error;
-                    }
-                } else {
-                    echo "El archivo subido está vacío.";
-                }
-        } else {
-                echo "No se ha subido ningún archivo o ha ocurrido un error.";
-            }
+        //             if ($conn->query($update_sql) === TRUE) {
+        //                 echo "El poster ha sido agregado exitosamente.";
+        //             } else {
+        //                 echo "Error al agregar el poster: " . $conn->error;
+        //             }
+        //         } else {
+        //             echo "El archivo subido está vacío.";
+        //         }
+        // } else {
+        //         echo "No se ha subido ningún archivo o ha ocurrido un error.";
+        //     }
 
 
         /////////////////////////////////////////////////
@@ -681,7 +654,8 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='4'>4</option>
             <option value='4,5'>4,5</option>
             <option value='5'>5</option>
-        </select> <h3 class="titulo-h3">Estrellas</h3><br>
+        </select> <h3 class="titulo-h3">Estrellas</h3><br> <!--subir a la linea 646  -->
+       
         <?php
         echo "<input name='valor11' type='text' size='2' maxlength='2' placeholder='Orden'><br>";
         ?>

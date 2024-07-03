@@ -36,11 +36,11 @@ session_start();
             <nav id="navbar">
                 <div class="menu">
                     <ul>
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../pages/tendencias.html">(API)</a></li>
-                        <li><a href="../pages/registro_usuario.html">Registrarse</a></li>
-                        <li class="peli-adm"><a href="index.php">Administrar</a></li>
-                        <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
+                        <!-- <li><a href="../index.html">Front</a></li> -->
+                        <!-- <li><a href="../pages/tendencias.html">(API)</a></li> -->
+                        <!-- <li><a href="./pages/registro_usuario.html">Registrarse</a></li> -->
+                        <!-- <li class="peli-adm"><a href="index.php">Administrar</a></li> -->
+                        <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Vista Cliente</a></li>
                     </ul>
                 </div>
             </nav>
