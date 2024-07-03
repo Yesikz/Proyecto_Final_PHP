@@ -34,13 +34,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fecha_nacimiento, pais) 
                     VALUES ('$nombre', '$apellido', '$email', '$passwordHashed', '$fecha_nacimiento', '$pais')";
 
-            if ($conn->query($sql) === TRUE) {
-                echo "Registro exitoso!";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro exitoso!',
+                    confirmButtonText: 'OK',
+                    background: 'linear-gradient(135deg,  #b37ef0, #476bce)',
+                    customClass: {
+                        title: 'swal2-title-custom',
+                        popup: 'swal2-popup-custom'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        console.log('Redirecting to login page');
+                        window.location.href = '../pages/inicio_sesion_user.html';
+                    }
+                });
+            });
+          </script>
+          <style>
+            .swal2-title-custom {
+                font-size: 15px;
+                color:black;
             }
-        }
-    }
+            .swal2-popup-custom {
+                color:black;
+                font-size: 11px; 
+                width: 250px; 
+                height: auto; 
+            }
+          </style>";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+}
+}
+
 
     $conn->close();
 }
@@ -69,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 14px;
         }
     </style>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
@@ -97,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main>
         <section class="login">
-            <form class="form-container" id="registroForm" action="registro_user.php" method="post">
+            <form class="form-container" id="registroForm" action="user_registro.php" method="post">
                 <h1 class="titulo">Registro de Usuario</h1><br>
 
                 <input type="text" name="nombre" placeholder="Nombre" required>
