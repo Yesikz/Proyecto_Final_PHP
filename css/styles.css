@@ -635,30 +635,35 @@ footer {
         font-size: 10px;
     }
 
+    .buscadorPrincipal {
+        height: 55vh;
+        }   
+  
     .imag-1 {
-        height: 30vh;
+        height: 55vh;
     
         }
 
     
     .tituloPrincipal {
-        margin-top: 30px;
+        margin-top: 50px;
         font-size: 1rem;
-        margin-bottom: 1rem;
+       
     }
     .subtituloPrincipal {
-        font-size: 0.8rem;     
+        font-size: 0.8rem; 
+        margin-bottom: 12px;    
         }
 
-    .buscadorPrincipal {
-        height: 30vh;
-       
+    .tituloSection {
+        font-size: 0.9rem;
+        margin-bottom: 3%;
+        margin-left: 10px;
         }   
-  
-    
-    #titulo{
-        margin-left: 16%;
-    }
+
+        .boton-1{ 
+            font-size: 0.6rem;
+        }
     
     .peli-adm{
 
@@ -693,45 +698,30 @@ footer {
         margin-left: 42px;
         margin-right: 35px;
         height: 100%;
-        animation: slideUp 1s ease-in-out;
+        animation: slideUp 1s ease-in-out;}
 
-}
+
     .card-1 {
         width: 150px; 
         height: 250px;
     
     }
     
-    
-    .tituloPrincipal {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-    }
-    .subtituloPrincipal {
-        font-size: 0.8rem;
-        margin-bottom: 5rem;
-    
-    }
-    .tituloSection {
-        font-size: 0.9rem;
-        margin-bottom: 3%;
-        margin-left: 10px;
-    }
+
     h3{
         font-size:0.7rem ;
     }
   
     button {
         border-radius: 10px;
-        padding: 5px 5px;
+        padding: 3px 3px;
         
     }
-    .boton-1, .boton-2{ 
+   
+    .boton-2{ 
         margin: 3px auto;
         font-size: 0.7rem;
     }
-
 
     .inputBuscador {
         width: 80%;
@@ -787,6 +777,7 @@ footer {
       font-size: 12px;
     }
     
+   
     
 }
 
