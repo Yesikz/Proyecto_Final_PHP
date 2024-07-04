@@ -12,7 +12,46 @@ if (!isset($_SESSION['admin_email'])) {
     exit();
 }
 
-$debug=1;
+$debug=0;
+$generos="";
+$generoo="";
+$nombre_generoo="";
+$nombre_dirr="";
+$nacionalidadd="";
+$nombree="";
+$id_pelicula="";
+$lanzamiento="";
+$duracion="";
+$directorr="";
+$nombre_pelicula ="";
+$sinapsis="";
+$clasificacion="";
+$calificacion="";
+$orden="";
+$estado="";
+$muestroestado="";
+$esteanio=date("Y");
+
+  if (isset($_POST['accion'])) {
+        // La variable está presente, puedes realizar acciones con ella
+        $accion = $_POST['accion'];
+    if ($debug==1) {
+            echo "El valor de 'accion' es: " . $accion;
+        echo"<br>";
+        }
+    } else {
+        // La variable no está presente, realiza alguna acción predeterminada o muestra un mensaje de error
+        if ($debug==1) {
+            echo "La variable 'accion' no se ha recibido.";
+        echo"<br>";
+        }
+        $accion = 0;
+    }
+
+
+
+$directores="";
+$paises="";
 include 'config.php';
 $filename = basename($_SERVER['PHP_SELF']);
 
@@ -229,8 +268,6 @@ form .button-red:hover {
 }
 
     </style>
-
-
 </head>
 <body>
     <div class="container">
@@ -239,25 +276,10 @@ form .button-red:hover {
       </div>
 
     <?php
-    if (isset($_POST['accion'])) {
-        // La variable está presente, puedes realizar acciones con ella
-        $accion = $_POST['accion'];
-    if ($debug==2) {
-            echo "El valor de 'accion' es: " . $accion;
-        echo"<br>";
-        }
-    } else {
-        // La variable no está presente, realiza alguna acción predeterminada o muestra un mensaje de error
-        if ($debug==2) {
-            echo "La variable 'accion' no se ha recibido.";
-        echo"<br>";
-        }
-        $accion = 0;
-    }
 
 if ($accion == 1) { // alta
         // var_dump($_POST);
-        echo "<br>";
+       //  echo "<br>";
         $valor2 = $_POST['valor2'];
         $valor3 = $_POST['valor3'];
         $valor4 = $_POST['valor4'];
@@ -270,65 +292,28 @@ if ($accion == 1) { // alta
     $valor11= $_POST['valor11'];
     $valor12 = $_POST['valor12'];
 
-    $file = $_FILES['file']['tmp_name'];
-
 
     $my_query = "INSERT INTO `$tabla1` (`$campo2`, `$campo3`, `$campo4`, `$campo5`,
         `$campo6`, `$campo7`, `$campo8`, `$campo9`, `$campo10`, `$campo11`, `$campo12`)   
     VALUES ('$valor2', '$valor3', '$valor4', '$valor5','$valor6', '$valor7', '$valor8', '$valor9',
         '$valor10', '$valor11', '$valor12')";
-    If($debug){
-        echo "my_query $my_query<br>";
-    }
 
-        if ($conn->query($my_query) === TRUE) {
+
+        if ($conn->query($my_query) === TRUE) 
+        {
         ?>
         <img src='./imagenes/icon-good.svg'>Se agregó <?php echo $cosa . " " . $valor2 ?><br>        
         <?php        
-        // cargo la foto ////
-
-        //     $id_pelicula=$conn->insert_id;
-        //     if($debug)
-        //         {echo "id_pelicula: $id_pelicula<br> ";}
-        
-        //    $id_pelicula = $conn->insert_id;
-
-        //     if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
-
-        //         // Verifica si el archivo no está vacío
-        //         if ($_FILES['file']['size'] > 0) {
-        //             // Lee el contenido del archivo
-        //             $fileContent = file_get_contents($_FILES['file']['tmp_name']);
-        //             $posterData = base64_encode($fileContent);
-
-        //             // Escapa el nombre del archivo para evitar inyección SQL
-        //             $poster = $conn->real_escape_string($_FILES['file']['name']);
-
-        //             // Actualiza el campo poster del registro recién insertado
-        //             $update_sql = "UPDATE peliculas SET poster='$posterData' WHERE id_pelicula='$id_pelicula'";
-
-        //             if ($conn->query($update_sql) === TRUE) {
-        //                 echo "El poster ha sido agregado exitosamente.";
-        //             } else {
-        //                 echo "Error al agregar el poster: " . $conn->error;
-        //             }
-        //         } else {
-        //             echo "El archivo subido está vacío.";
-        //         }
-        // } else {
-        //         echo "No se ha subido ningún archivo o ha ocurrido un error.";
-        //     }
-
-
-        /////////////////////////////////////////////////
-    } 
-    else {
+        } 
+        else 
+        {
             echo $conn->error;
             echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se agregó $cosa, tome nota del error<br>";
         }
     }
 
-if ($accion == 2) { // modificacion
+//// modificacion
+if ($accion == 2) { 
 
         $valor1 = $_POST['valor1'];
         $valor2 = $_POST['valor2'];
@@ -430,22 +415,17 @@ if ($result->num_rows > 0) {
     $directorr=$arr['director'];
     $nombre_dirr=$arr['nombre_dir'];
 
-
     $sinapsis = $arr['sinapsis'];
     $calificacion = $arr['calificacion'];
     $clasificacion = $arr['clasificacion'];
     $nombre_dir = $arr['nombre_dir'];
 
-
     $nacionalidadd = $arr['nacionalidad'];
     $nombree = $arr['nombre'];
     
-
     $orden = $arr['orden'];
     $estado = $arr['estado'];
      
-
-    // Asumí que este campo es el nombre de la nacionalidad
 
     if ($estado == 0) {
         $muestroestado = "Inactivo";
@@ -497,23 +477,6 @@ if ($result->num_rows > 0) {
         $nombre=$arr['nombre'];
         $paises =$paises."<option value='$id_nacio'>$nombre</option>";
     }
-/*
-        $result = $conn->query($my_query);
-        while ($arr = $result->fetch_assoc()) {
-        $id_pelicula = $arr['id_pelicula'];
-        $nombre_pelicula = $arr['nombre_pelicula'];
-        $nombre_genero = $arr['nombre_genero'];
-        $lanzamiento = $arr['lanzamiento'];
-        $duracion = $arr['duracion'];
-        $sinapsis = $arr['sinapsis'];
-        $calificacion = $arr['calificacion'];
-        $clasificacion = $arr['clasificacion'];
-
-            $nombre_dir = $arr['nombre_dir'];
-            $orden = $arr['orden'];
-            $estado = $arr['estado'];
-            $nacionalidad = $arr['nacionalidad'];
-    } */
 
     echo "Modifique los datos que desea corregir: ";
     echo "<form action='$filename' method='post'>";
@@ -539,7 +502,7 @@ if ($result->num_rows > 0) {
            Origen: </strong></font> <select name='valor8' size='1'>
           <?php echo $paises ?> </select> <br>
     <?php
-
+        
     echo "Clasificacion: <input name='valor9' type='text' size='40' maxlength='40' value='$clasificacion'><br>";
    
     echo "Calificacion: 
@@ -550,13 +513,6 @@ if ($result->num_rows > 0) {
     <option value='4,5'>4,5</option><option value='5'>5</option>
           </select> Estrellas<br>";
 
-/* del JSON
-    echo "<label for='pais-select'>Selecciona un país:</label>";
-    echo "<select id='pais-select' class='pais-select' data-nacionalidad='$nacionalidad' name='valor3'>";
-    echo "<option value='$nacionalidad'>Seleccionar</option>";
-    echo "</select><br>";
-    */
-
 
     echo "Orden: <input type='text' name='valor11' value='$orden' size=2 maxlength=2><br>";
     echo "Estado: <select name='valor12'><option value='$estado' selected >$muestroestado</option>
@@ -566,14 +522,69 @@ if ($result->num_rows > 0) {
     echo "<br><br>";
 }
 
+// pone el poster 
+if ($accion == 8)
+
+{ 
+    // Obtener el ID de la película desde el formulario
+    $id_pelicula = $_POST['id_pelicula'];
+
+    if($debug)
+    {
+        echo " id_peli: $id_pelicula<br>";
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
+    // Verificar que el archivo se haya cargado correctamente
+    if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+        // Obtener el contenido del archivo
+        $file = $_FILES['file']['tmp_name'];
+        $fileData = file_get_contents($file);
+
+        // Verificar que el contenido del archivo no esté vacío
+        if ($fileData !== false && strlen($fileData) > 0) {
+            // Construir la consulta para actualizar el campo poster
+            $query = "UPDATE peliculas SET poster = ? WHERE id_pelicula = ?";
+
+            // Preparar la consulta
+            $stmt = $conn->prepare($query);
+            if ($stmt === false) {
+                die("Error preparando la consulta: " . $conn->error);
+            }
+
+            // Vincular los parámetros y ejecutar la consulta
+            $null = NULL;
+            $stmt->bind_param("bi", $null, $id_pelicula);
+            $stmt->send_long_data(0, $fileData);
+
+            if ($stmt->execute()) {
+                echo "La imagen se cargó correctamente.";
+            } else {
+                echo "Error al ejecutar la consulta: " . $stmt->error;
+            }
+
+            // Cerrar la consulta
+            $stmt->close();
+        } else {
+            echo "El archivo está vacío o no se pudo leer.";
+        }
+    } else {
+        echo "Error al cargar el archivo.";
+    }
+} else {
+    echo "Método de solicitud no válido o falta de parámetros.";
+}
+
+// No cerramos la conexión $conn->close(); aquí para permitir otros queries posteriores
+}
+
+///////////////////////////////////////////
+include 'config.php' ;
+
 // Formulario de alta
 if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1) 
 
-    $generos="";
-    $directores="";
-    $paises="";
-
-    $esteanio=date("Y");
+  $my_query3="";
     // lo que traigo de las otra tablas
     // generos
     $my_query3= "select *  from generos  where estado=1 order by nombre_genero"; 
@@ -644,6 +655,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
         <?php
         echo "<input name='valor9' type='text' size='40' maxlength='40' placeholder='Clasificación'><br>";
         ?>
+         </select> <h3 class="titulo-h3">Estrellas</h3><br>
         <select name='valor10' size='1'>
             <option value='1'>1</option>
             <option value='1,5'>1,5</option>
@@ -654,7 +666,6 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='4'>4</option>
             <option value='4,5'>4,5</option>
             <option value='5'>5</option>
-        </select> <h3 class="titulo-h3">Estrellas</h3><br> <!--subir a la linea 646  -->
        
         <?php
         echo "<input name='valor11' type='text' size='2' maxlength='2' placeholder='Orden'><br>";
@@ -664,13 +675,13 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='0'>Inactivo</option>
         </select><br>
         <div>
-            <h3 class="titulo-h3">Subir archivo</h3>
-            <input type='file' name='file'>
+      <!--      <h3 class="titulo-h3">Subir archivo</h3>
+            <input type='file' name='file'> -->
             <input type='hidden' name='accion' value='1'>
-            <br>
+            <br> 
             <input type='submit' class='button button-green' value='Cargar'>
             </form>
-        </div>
+        </div> 
 
     <?php
     //Muestra las peliculas cargadas
@@ -692,20 +703,19 @@ if ($result)
     <?php
         echo "<table border=1>";
     echo "<tr><td align=center> Codigo</td>
-                  <td align=center>Nombre</td>
-                  <td align=center>Genero</td>
-                  <td align=center>Año</td>
-                  <td align=center>Minutos</td>
-                  <td align=center>Director</td>
-                  <td align=center>Sinapsis</td>
-                  <td align=center>Calificacion</td>
-                  <td align=center>Clasificacion</td>
-                  <td align=center>Poster</td>
-                  
-                  
-                  <td align=center>Estado</td>
-
-                  <td>-</td><td>-</td></tr>";
+              <td align=center>Nombre</td>
+              <td align=center>Genero</td>
+              <td align=center>Año</td>
+              <td align=center>Minutos</td>
+              <td align=center>Director</td>
+              <td align=center>Sinapsis</td>
+              <td align=center>Calificacion</td>
+              <td align=center>Clasificacion</td>
+              <td align=center>Estado</td>
+              <td>-</td><td>-</td>
+              <td align=center>Poster</td>
+              <td align=center>Cambiar Poster</td>
+              </tr>";
 
         while ($arr = $result->fetch_assoc()) {
         $id_pelicula = $arr['id_pelicula'];
@@ -713,17 +723,14 @@ if ($result)
         $nombre_genero = $arr['nombre_genero'];
         $lanzamiento = $arr['lanzamiento'];
         $duracion = $arr['duracion'];
-            $nombre_dir = $arr['nombre_dir'];
+        $nombre_dir = $arr['nombre_dir'];
         $sinapsis = $arr['sinapsis'];
         $calificacion = $arr['calificacion'];
         $clasificacion = $arr['clasificacion'];
-        
-        
-        
-            $estado = $arr['estado'];
+        $estado = $arr['estado'];
 
-            echo "<form action='$filename' method='post'>";
-            echo "<input type='hidden' name='accion' value='3'>";
+        echo "<form action='$filename' method='post'>";
+        echo "<input type='hidden' name='accion' value='3'>";
         echo "<input type='hidden' name='valor1'  value='$id_pelicula'>";
             
         $propio = $arr['estado'];
@@ -744,16 +751,27 @@ if ($result)
         echo "<td> $sinapsis</td>";
         echo "<td> $calificacion</td>";
         echo "<td> $clasificacion</td>";
-        echo "<td><img src='muestraimagen.php?id_pelicula=$id_pelicula' width='100' height='150'></td>";
-        
-        echo "<td> $estado</td>";
 
+        echo "<td> $estado</td>";
         echo "<td><input type='submit' value='modificar'></td>";           
             echo "</form><form action='$filename' method='post'>";
             echo "<input type='hidden' name='accion' value='5'>";
         echo "<input type='hidden' name='valor1' value='$id_pelicula'>";
         echo "<input type='hidden' name='valor2' value='$nombre_pelicula'>";
-        echo "<td><input type='submit' value='borrar'></td></form>";
+        echo "<td><input type='submit' value='borrar'></form></td>";
+        echo "<td><img src='muestraimagen.php?id_pelicula=$id_pelicula' width='100' height='150'></td>";
+
+       echo"
+        <td>
+        <form action=$filename method='post' enctype='multipart/form-data'>
+        <input type='hidden' name='accion' value='8'>
+        <input type='hidden' name='id_pelicula' id='id_pelicula' value='$id_pelicula'>
+        Poster: <input type='file' name='file'><br>
+        <input type='submit' value='Subir Foto' name='submit'>
+        </form>
+        </td>";
+    
+
         echo "</tr>";
         }
         echo "</table>";
