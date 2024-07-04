@@ -55,7 +55,7 @@ session_start();
                     unset($_SESSION['error']); // Clear the error message
                 }
                 ?>
-                <form action="authenticate.php" method="post">
+                <form id="loginForm" action="authenticate.php" method="post">
                     <input type="email" id="email" name="email" placeholder="Email" required>
                     <input type="password" id="password" name="password" placeholder="Contraseña" required>
                     <button id="button" type="submit">Iniciar Sesión</button>
@@ -86,6 +86,8 @@ session_start();
     <!-- JS para Inicio de Sesion--> 
     <script>
     document.getElementById('button').addEventListener('click', function() {
+        event.preventDefault(); // Evitar el comportamiento por defecto del formulario
+
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
@@ -95,18 +97,23 @@ session_start();
         xhr.onload = function() {
             if (xhr.status === 200) {
                 var response = JSON.parse(xhr.responseText);
-                if (response.status === 'success' && response.user_type === 'admin') {
+                if (response.status === 'success') {
+                if (response.user_type === 'admin') {
                     // Redirigir al dashboard del administrador
                     window.location.href = 'admin_dashboard.php';
                 } else {
-                    // Mostrar mensaje de error específico para administrador
-                    alert(response.message);
+                    // Redirigir al dashboard del usuario
+                    alert('Usuario o contraseña incorrectos.');
                 }
             } else {
-                // Manejar errores de conexión o del servidor
-                alert('Error al intentar iniciar sesión. Inténtalo de nuevo más tarde.');
+                // Mostrar mensaje de error
+                alert(response.message);
             }
-        };
+        } else {
+            // Manejar errores de conexión o del servidor
+            alert('Error al intentar iniciar sesión. Inténtalo de nuevo más tarde.');
+        }
+    };
         var data = 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password);
         xhr.send(data);
     });
