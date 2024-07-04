@@ -7,15 +7,33 @@
 * Version Para php 5.
 */
 
+$debug=0;
+include 'config.php';
+$filename = basename($_SERVER['PHP_SELF']);
+
 session_start();
 if (!isset($_SESSION['admin_email'])) {
     header("Location: login.php");
     exit();
 }
 
-$debug=0;
-include 'config.php';
-$filename = basename($_SERVER['PHP_SELF']);
+
+if (isset($_POST['accion'])) 
+{
+    $accion = $_POST['accion'];
+    if($debug) {     		echo "El valor de 'accion' es: " . $accion; }
+} else 
+{
+    	// La variable no está presente, realiza alguna acción predeterminada o muestra un mensaje de error
+    	if($debug)
+    	{
+   			 echo "La variable 'accion' no se ha recibido.";
+    	}
+    $accion = 0;
+}
+
+
+
 
 $tabla1= 'nacionalidades' ;
 $campo1='id_nacio' ;
@@ -197,22 +215,6 @@ table td {
 
 <?php 
 
-if (isset($_POST['accion'])) {
-    $accion = $_POST['accion'];
-    if($debug) {
-    		echo "El valor de 'accion' es: " . $accion;
-    		}
-} else {
-    if($debug) {
-    	// La variable no está presente, realiza alguna acción predeterminada o muestra un mensaje de error
-    	if($debug)
-    	{
-   			 echo "La variable 'accion' no se ha recibido.";
-    	}
-    $accion = 0;
-}
-}
-
 	
 	if ($accion==1)/// alta 
 		{ 
@@ -335,7 +337,7 @@ if ($accion==3) /// trae datos para modificar
     echo "<input type='hidden' name='valor1' value='$id_nacio'>";
     echo "Codigo:<b> $id_nacio</b><br>";
 			echo "Nombre: <input type='text' name='valor2' value='$nombre' size=60 maxlength=60><br>";
-			echo "País: <input type='text' name='valor3' value='$pais' size=2 maxlength=2><br>";
+			echo "País: <input type='text' name='valor3' value='$pais' size=30 maxlength=30 ><br>";
 			echo "Estado: <select name='valor4'><option value='$estado' selected >$muestroestado</option>
      <option value='1'>Activo</option><option value='0'>Inactivo</option></select><br>";
     echo "<button type='submit' class='button button-blue'>Modificar</button>";
@@ -344,7 +346,8 @@ if ($accion==3) /// trae datos para modificar
 	}
 
 		if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1) { // form de alta
-			echo "<br>";
+
+            echo "<br>";
 			echo "<div class='form-section'>";
 			echo "<h3>Alta de países para pelis y directores</h3>";
 			echo "<form name='form1' method='post' action='$filename'>";
