@@ -1,52 +1,3 @@
-<?php
-require 'config.php';
-
-// Variable para almacenar los mensajes de error
-$error = ''; 
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmarPassword = $_POST['confirmarPassword'];
-    $fecha_nacimiento = $_POST['fechaNacimiento'];
-    $pais = $_POST['pais'];
-
-    // Verificar si el correo electrónico ya está registrado
-    $sql_check_email = "SELECT * FROM usuarios WHERE email = '$email'";
-    $result = $conn->query($sql_check_email);
-
-    if ($result->num_rows > 0) {
-        $error = "El correo electrónico ya está registrado. Por favor, utiliza otro correo.";
-    } else {
-        // Verificar que las contraseñas coincidan
-        if ($password !== $confirmarPassword) {
-            $error = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
-        } else {
-            $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
-
-            $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fecha_nacimiento, pais) 
-                    VALUES ('$nombre', '$apellido', '$email', '$passwordHashed', '$fecha_nacimiento', '$pais')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "Registro exitoso!";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-        }
-    }
-
-    $conn->close();
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -70,6 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </style>
 
+    <!-- Sweet Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
@@ -88,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="menu">
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
-                    <li class="peli-adm"><a href="../backend/index.php">Administrar</a></li>
-                    <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
+                    <!--<li class="peli-adm"><a href="../backend/index.php">Administrar</a></li>-->
+                    <li class="menu-1"><a href="../backend/user_inicio_sesion.php">Inicia Sesión</a></li>
                 </ul>
             </div>
         </nav>
@@ -97,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main>
         <section class="login">
-            <form class="form-container" id="registroForm" action="registro_user.php" method="post">
+            <form class="form-container" id="registroForm" action="user_registro.php" method="post">
                 <h1 class="titulo">Registro de Usuario</h1><br>
 
                 <input type="text" name="nombre" placeholder="Nombre" required>
@@ -114,6 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <select name="pais" required>
                     <option value="" disabled selected>Selecciona tu país</option>
                     <?php
+                    require 'config.php';
                     // Consulta para obtener los países
                     $sql_paises = "SELECT nombre FROM nacionalidades";
                     $result_paises = $conn->query($sql_paises);
@@ -127,6 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     } else {
                         echo "<option value=''>No hay países disponibles</option>";
                     }
+
+                    $conn->close(); // Cerrar la conexión aquí también
                     ?>
                 </select>
 
@@ -135,12 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="terminos">Acepto los <a href="#" id="termsLink">términos y condiciones</a></label>
                 </div>
 
-                <div class="error-message" id="passwordError"><?php echo $error; ?></div> <!-- Mensaje de error -->
+                <div id="errorMessage" class="error-message"></div> <!-- Mensaje de error -->
 
-                <button type="submit" id="submitBtn" class="btn-registrarse">Registrarse</button>
+                <button type="button" id="submitBtn" class="btn-registrarse">Registrarse</button>
 
                 <div class="register-message">
-                    <p>¿Ya tienes una cuenta?</p> <a href="../pages/inicio_sesion_user.html">Inicia sesión</a>
+                    <p>¿Ya tienes una cuenta?</p> <a href="../backend/user_inicio_sesion.php">Inicia sesión</a>
                 </div>
             </form>
         </section>
@@ -245,6 +202,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!--Scrips-->
     <script src="../js/menu-hamburguesa.js"></script>
+    
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            var form = document.getElementById("registroForm");
+            var formData = new FormData(form);
+
+            // Validación de campos requeridos en el lado del cliente
+            var nombre = formData.get("nombre");
+            var apellido = formData.get("apellido");
+            var email = formData.get("email");
+            var password = formData.get("password");
+            var confirmarPassword = formData.get("confirmarPassword");
+            var fechaNacimiento = formData.get("fechaNacimiento");
+            var pais = formData.get("pais");
+            var terminos = document.getElementById("terminos");
+
+            if (
+                !nombre ||
+                !apellido ||
+                !email ||
+                !password ||
+                !confirmarPassword ||
+                !fechaNacimiento ||
+                !pais ||
+                !terminos.checked
+            ) {
+                document.getElementById("errorMessage").textContent = "Todos los campos son obligatorios, por favor completalos.";
+                return; // Evita enviar el formulario si hay campos vacíos
+            }
+
+            // Si todos los campos requeridos están completos, enviar el formulario
+            fetch("user_procesar_registro.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "error") {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: data.message,
+                        confirmButtonText: 'OK',
+                        background: 'linear-gradient(135deg, #b37ef0, #476bce)',
+                        customClass: {
+                        title: 'swal2-title-custom',
+                        popup: 'swal2-popup-custom'
+                        }
+                    });
+
+                } else if (data.status === "success") {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Registro exitoso!',
+                        confirmButtonText: 'OK',
+                        background: 'linear-gradient(135deg, #b37ef0, #476bce)',
+                        customClass: {
+                            title: 'swal2-title-custom',
+                            popup: 'swal2-popup-custom'
+                        }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '../backend/user_inicio_sesion.php';
+                    }
+                });
+            }
+        })
+        .catch(error => console.error("Error:", error));
+        });
+    </script>
+
     <script>
         // JavaScript para confirmar terminos y condiciones
         document.getElementById('registroForm').addEventListener('submit', function(event) {
@@ -255,31 +283,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         });
 
-        // JavaScript para validar las contraseñas antes de enviar el formulario
-        document.getElementById("registroForm").addEventListener("submit", function(event) {
-            var password = document.getElementsByName("password")[0].value;
-            var confirmarPassword = document.getElementsByName("confirmarPassword")[0].value;
-            var errorDiv = document.getElementById("passwordError");
-
-            if (password !== confirmarPassword) {
-                errorDiv.textContent = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
-                event.preventDefault(); // Evita que el formulario se envíe
-            } else {
-                errorDiv.textContent = ""; // Borra el mensaje de error si las contraseñas coinciden
-            }
-        });
-
-
-
-        ///Scrip///
-        // MODAL //
-        var modal = document.getElementById("termsModal");
-
-        // Obtener el botón que abre el modal
-        var btn = document.getElementById("termsLink");
-
-        // Obtener el elemento <span> que cierra el modal
-        var span = document.getElementsByClassName("close")[0];
+        // JavaScript para que aparezca el modal
+        var modal = document.getElementById("termsModal");    
+        var btn = document.getElementById("termsLink"); // Obtener el botón que abre el modal
+        var span = document.getElementsByClassName("close")[0]; // Obtener el elemento <span> que cierra el modal   
 
         // Función para abrir el modal
         function openModal() {
@@ -302,12 +309,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             modal.style.display = "none";
         }
 
-        // Cuando el usuario haga clic en cualquier parte fuera del modal, lo cierra
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
     </script>
 
 </body>
