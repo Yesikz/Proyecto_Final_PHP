@@ -12,7 +12,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/menu-hamburguesa.css">
     
     <title>Inicio Sesión Administrador</title>
@@ -37,10 +37,10 @@ session_start();
                 <div class="menu">
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../pages/tendencias.html">(API)</a></li>
+                        <!--<li><a href="../pages/tendencias.html">(API)</a></li>
                         <li><a href="../backend/user_registro.php">Registrarse</a></li>
                         <li class="peli-adm"><a href="index.php">Administrar</a></li>
-                        <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>
+                        <li class="menu-1"><a href="../pages/inicio_sesion_user.html">Inicia Sesión</a></li>-->
                     </ul>
                 </div>
             </nav>
