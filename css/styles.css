@@ -168,7 +168,7 @@ button {
     padding: 1rem 2rem;
     border-radius: 5px;
     font-size: 1.2rem;
-    font-weight: 700;
+    margin: auto;
     text-decoration: none;
 }
 
@@ -523,18 +523,12 @@ footer {
         }
     
         
-    .boton-1{
-        margin-left: 28%;
-    }
-    
+  
     #titulo{
         margin-left: 16%;
     }
     
-    .boton-2{
-        margin-left: 38%;
-       
-    }
+   
     .imag-1 {
         height: 70vh;
     
@@ -662,7 +656,8 @@ footer {
         }   
 
         .boton-1{ 
-            font-size: 0.6rem;
+        font-size: 0.6rem;
+          
         }
     
     .peli-adm{
