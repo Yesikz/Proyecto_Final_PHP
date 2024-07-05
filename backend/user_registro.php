@@ -1,3 +1,52 @@
+<?php
+require 'config.php';
+
+// Variable para almacenar los mensajes de error
+$error = ''; 
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido '];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmarPassword = $_POST['confirmarPassword'];
+    $fecha_nacimiento = $_POST['fechaNacimiento'];
+    $pais = $_POST['pais'];
+
+    // Verificar si el correo electrónico ya está registrado
+    $sql_check_email = "SELECT * FROM usuarios WHERE email = '$email'";
+    $result = $conn->query($sql_check_email);
+
+    if ($result->num_rows > 0) {
+        $error = "El correo electrónico ya está registrado. Por favor, utiliza otro correo.";
+    } else {
+        // Verificar que las contraseñas coincidan
+        if ($password !== $confirmarPassword) {
+            $error = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
+        } else {
+            $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO usuarios (nombre, apellido, email, password, fecha_nacimiento, pais) 
+                    VALUES ('$nombre', '$apellido', '$email', '$passwordHashed', '$fecha_nacimiento', '$pais')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Registro exitoso!";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
+    }
+
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +72,18 @@
 
     <!-- Sweet Alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <style>
+        .swal2-title-custom {
+            font-size: 15px;
+            color: black;
+        }
+        .swal2-popup-custom {
+            color: black;
+            font-size: 11px; 
+            width: 150px; 
+            height: auto; 
+        }
+    </style>
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
