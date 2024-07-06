@@ -84,6 +84,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: auto; 
         }
     </style>
+    <style>
+        .swal2-title-custom {
+            font-size: 15px;
+            color: black;
+        }
+        .swal2-popup-custom {
+            color: black;
+            font-size: 11px; 
+            width: 150px; 
+            height: auto; 
+        }
+    </style>
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
