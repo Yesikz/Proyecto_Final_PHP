@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido '];
+    $apellido = $_POST['apellido'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmarPassword = $_POST['confirmarPassword'];
@@ -72,6 +72,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Sweet Alert-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .swal2-title-custom {
+            font-size: 15px;
+            color: black;
+        }
+        .swal2-popup-custom {
+            color: black;
+            font-size: 11px; 
+            width: 150px; 
+            height: auto; 
+        }
+    </style>
     <style>
         .swal2-title-custom {
             font-size: 15px;

@@ -8,12 +8,12 @@
 */
 
 $debug=0;
-include 'config.php';
+include 'index.php';
 $filename = basename($_SERVER['PHP_SELF']);
 
 session_start();
 if (!isset($_SESSION['admin_email'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
