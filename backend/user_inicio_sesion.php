@@ -106,7 +106,7 @@ session_start();
                 var response = JSON.parse(xhr.responseText);
                 if (response.status === 'success' && response.user_type === 'user') {
                     // Redirigir a la página correspondiente para el usuario
-                    window.location.href = '../pages/sesion_user.html';
+                    window.location.href = './sesion_user.php';
                 } else {
                     // Mostrar mensaje de error específico para usuario
                     alert(response.message);

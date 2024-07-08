@@ -8,7 +8,7 @@
 */
 
 $debug=0;
-include 'index.php';
+include 'config.php';
 $filename = basename($_SERVER['PHP_SELF']);
 
 session_start();
@@ -165,7 +165,6 @@ table td {
     background-color: #555;
         }
 
-		<style>
     .form-section {
         margin-top: 20px;
         padding: 20px;
@@ -416,7 +415,7 @@ if ($result) {
         <div class="links">
 			<a href="abm_peliculas.php" class="button button-blue">Gestionar Películas</a>
             <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
-            <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
+            <a href="abm_generos.php" class="button button-blue">Gestionar Generos</a>
     </div>
 	<a href="logout.php" class="button button-red">Logout</a>
     </div>

@@ -1,3 +1,18 @@
+
+<?php
+// session_start(); 
+// include "config.php";
+
+// $my_query =
+// "
+// SELECT
+//     t1.id_pelicula, t1.nombre_pelicula, t1.genero, t1.lanzamiento , t1.duracion  , t1.director ,
+//     t1.sinapsis ,  t1.nacionalidad , t1.clasificacion ,  t1.calificacion , t1.poster  
+//    from peliculas as t1";
+//    $result = $conn->query($sql);
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,7 +57,7 @@
                 <ul>
                     <li>
                         
-                        <button class="boton-2" type="submit"><a href="./sesion_user.html">Elegir otra Pelicula</a></button>
+                        <button class="boton-2" type="submit"><a href="./sesion_user.php">Elegir otra Pelicula</a></button>
                     </li>
                 </ul>
             </div>
