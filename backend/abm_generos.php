@@ -8,7 +8,7 @@
 */
 session_start();
 if (!isset($_SESSION['admin_email'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -190,6 +190,7 @@ table tr:hover {
         <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p> -->
         <div class="links">
             <a href="admin_dashboard.php" class="button button-blue">Volver al dashboard</a>
+            <a href="abm_generos.php" class="button button-blue">gestionar generos</a>
         </div>
     </div>
 
@@ -269,16 +270,16 @@ if ($accion == 1) { // alta
     if ($accion == 5) /// baja
     {
         $valor1 = $_POST['valor1'];
-			$query="select * from peliculas where genero=$valor1";
-			$result = $conn->query($my_query);
+		// 	$query="select * from peliculas where genero=$valor1";
+		// 	$result = $conn->query($query);
 
-        if($result){
-        ?>
-            <div class="container">
-                Hay películas que tienen asignado ese género. No se puede borrar hasta tanto modifique las películas.<br>
-            </div>
+        // if($result){
+        // ?>
+        <!-- //     <div class="container">
+        //         Hay películas que tienen asignado ese género. No se puede borrar hasta tanto modifique las películas.<br>
+        //     </div> -->
         <?php
-        } else {
+        // } else {
             $my_query = "SELECT * FROM $tabla1 WHERE $campo1='$valor1'";
             $result = $conn->query($my_query);
             while ($arr = $result->fetch_assoc()) {
@@ -306,7 +307,7 @@ if ($accion == 1) { // alta
             <?php
             }
         }
-    }
+    
 
     if ($accion == 3) /// trae datos para modificar
     {
