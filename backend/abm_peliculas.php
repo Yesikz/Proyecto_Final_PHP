@@ -630,6 +630,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
         <h1 class="titulo-h1">Alta de Películas</h1>
         <div class="links">
             <a href="admin_dashboard.php" class= "button button-blue">Volver al dashboard</a>
+            <a href="abm_peliculas.php" class="button button-blue">Gestionar Películas</a>
         </div>
 
         <?php
