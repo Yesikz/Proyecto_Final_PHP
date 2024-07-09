@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido '];
+    $apellido = $_POST['apellido'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmarPassword = $_POST['confirmarPassword'];
@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: auto; 
         }
     </style>
+    
 </head>
 
 <body style="background-image: url('../img/fondo_pag_inicio.jpg');">
