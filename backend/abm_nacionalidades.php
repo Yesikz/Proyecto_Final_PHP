@@ -209,6 +209,8 @@ table td {
     <div class="container">
 			<h1 class="titulo-h1">Nacionalidades</h1>
             <a href="admin_dashboard.php" class="button button-blue">Volver al dashboard</a>
+            
+            <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
             </div>
       </div>
 

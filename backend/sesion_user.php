@@ -1,11 +1,8 @@
 <?php session_start(); 
 include 'config.php';
 
-
-
 $sql = "SELECT nombre_pelicula, id_pelicula FROM peliculas LIMIT 12";
 $result = $conn->query($sql);
-
 ?>
 
 
