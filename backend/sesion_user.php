@@ -22,6 +22,7 @@ $result = $conn->query($sql);
         <link rel="stylesheet" href="../css/menu-hamburguesa.css">
 
         <title>Acisey Movies</title>
+        
     </head>
 
     <body>
@@ -49,33 +50,9 @@ $result = $conn->query($sql);
 
 
         <main>
-            <section class="imag-1">
-                <div class="1-section">
-                    <h1 class="tituloPrincipal">
-                        Peliculas y series ilimitadas<br>
-                        en un solo lugar
-                    </h1>
-                    <h2 class="subtituloPrincipal">
-
-                        Regístrate ahora y explora un mundo de entretenimiento.
-                    </h2>
-
-                </div>
-
-            </section>
-            <br>
+            
 
 
-            <section class="buscadorPrincipal">
-                <h2 class="tituloSection">¿Qué estás buscando para ver hoy?</h2>
-                <h3 for="titulo">Título de la película o serie:</h3>
-                <form class="buscadorPeliculas">
-                    <input class="inputBuscador" type="text" id="titulo" placeholder="Buscar..." name="titulo" required>
-                    <button class="boton-2" type="submit">Buscar</button>
-                </form>
-            </section>
-
-            <hr>
 
             <section>
                 <br>
@@ -112,76 +89,9 @@ $result = $conn->query($sql);
             <hr>
 
             <section>
-                <br>
-                <h1>Las mas vistas</h1>
-                <div class="contenedor-1">
-                    <div class="card-1">
-                        <a href="ver_pelis.php">
-                            <figure>
-                                <img src="../img/peli_11.jpg" alt="">
-                            </figure>
-                        </a>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_5.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_4.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_20.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_7.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_21.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_22.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_23.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_27.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_18.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_17.jpg" alt="">
-                        </figure>
-                    </div>
-                    <div class="card-1">
-                        <figure>
-                            <img src="../img/peli_16.jpg" alt="">
-                        </figure>
-                    </div>
+                
 
-                </div>
-            </section>
-
-            <br>
+        
 
 
             <footer class="footer">
