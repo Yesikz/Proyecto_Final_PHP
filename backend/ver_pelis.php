@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+
 include "config.php";  
 
 if (isset($_GET['id_pelicula'])) {

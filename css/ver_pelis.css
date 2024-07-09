@@ -1,3 +1,4 @@
+
 .mainDetalle {
   color: rgb(255, 255, 255);
   user-select: none;
@@ -15,6 +16,7 @@
   width: 75%;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   column-gap: 60px;
@@ -32,11 +34,6 @@
 .textoDetalle h2 {
     margin-top: 20px;
 } 
-.contenedorDetalle {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
 
 .trailer {
     padding-bottom: 100px;
@@ -91,11 +88,13 @@ td:nth-child(1) {
     height: initial;
   }
   .contenedorDetalle {
+    display: flex;
+    align-items: center;
     flex-direction: column;
     row-gap: 20px;
   }
   .imgDetalle {
-    width: 100%;
+    width: 40%;
     margin-bottom: 20px;
   }
   .imgDetalle img {
@@ -103,10 +102,10 @@ td:nth-child(1) {
     height: auto;
   }
   .textoDetalle h1 {
-    font-size: 1.5rem;
+    font-size: 2.0rem;
   }
   .textoDetalle h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .contenedorBoton{
     display: flex;
