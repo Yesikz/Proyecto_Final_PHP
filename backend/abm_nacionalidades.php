@@ -8,7 +8,7 @@
 */
 
 $debug=0;
-include 'index.php';
+include 'config.php';
 $filename = basename($_SERVER['PHP_SELF']);
 
 session_start();
@@ -165,7 +165,6 @@ table td {
     background-color: #555;
         }
 
-		<style>
     .form-section {
         margin-top: 20px;
         padding: 20px;
@@ -210,6 +209,8 @@ table td {
     <div class="container">
 			<h1 class="titulo-h1">Nacionalidades</h1>
             <a href="admin_dashboard.php" class="button button-blue">Volver al dashboard</a>
+            
+            <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
             </div>
       </div>
 
@@ -351,7 +352,7 @@ if ($accion==3) /// trae datos para modificar
 			echo "<div class='form-section'>";
 			echo "<h3>Alta de países para pelis y directores</h3>";
 			echo "<form name='form1' method='post' action='$filename'>";
-			echo "<input name='valor2' type='text' size='40' maxlength='40' placeholder='Nombre'><br>";
+			echo "<input name='valor2' type='text' size='40' maxlength='40' placeholder='Pais'><br>";
 			echo "<input name='valor3' type='text' size='40' maxlength='40' placeholder='País'><br>";
 			echo "<select name='valor4' onchange=\"this.setAttribute('data-placeholder', '');\">";
 			echo "<option value='' selected disabled hidden>Estado</option>";
@@ -416,7 +417,7 @@ if ($result) {
         <div class="links">
 			<a href="abm_peliculas.php" class="button button-blue">Gestionar Películas</a>
             <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
-            <a href="abm_nacionalidades.php" class="button button-blue">Gestionar Nacionalidades</a>
+            <a href="abm_generos.php" class="button button-blue">Gestionar Generos</a>
     </div>
 	<a href="logout.php" class="button button-red">Logout</a>
     </div>

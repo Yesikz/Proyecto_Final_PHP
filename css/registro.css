@@ -56,23 +56,6 @@ input[type="checkbox"] {
     padding-left: 5px;
 }
 
-
-/* Registro de Peliculas */
-/* 
-.form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-family: "Noto Sans Khojki", Arial, sans-serif;
-}
-*/
-
-
 /* Estilos para el Modal */
 .modal {
     display: none; 

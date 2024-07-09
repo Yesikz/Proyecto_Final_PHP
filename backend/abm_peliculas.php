@@ -90,6 +90,10 @@ $cosa='la pelicula';
     text-align: center;
 }
 
+.texto-blanco {
+    color: white;
+}
+
 .titulo-h1 {
     display: grid;
     place-items: center;
@@ -284,13 +288,13 @@ if ($accion == 1) { // alta
         $valor3 = $_POST['valor3'];
         $valor4 = $_POST['valor4'];
         $valor5 = $_POST['valor5'];
-    $valor6 = $_POST['valor6'];
-    $valor7 = $_POST['valor7'];
-    $valor8 = $_POST['valor8'];
-    $valor9 = $_POST['valor9'];
-    $valor10 = $_POST['valor10'];
-    $valor11= $_POST['valor11'];
-    $valor12 = $_POST['valor12'];
+        $valor6 = $_POST['valor6'];
+        $valor7 = $_POST['valor7'];
+        $valor8 = $_POST['valor8'];
+        $valor9 = $_POST['valor9'];
+        $valor10 = $_POST['valor10'];
+        $valor11= $_POST['valor11'];
+        $valor12 = $_POST['valor12'];
 
 
     $my_query = "INSERT INTO `$tabla1` (`$campo2`, `$campo3`, `$campo4`, `$campo5`,
@@ -302,9 +306,11 @@ if ($accion == 1) { // alta
         if ($conn->query($my_query) === TRUE) 
         {
         ?>
-        <img src='./imagenes/icon-good.svg'>Se agregó <?php echo $cosa . " " . $valor2 ?><br>        
-        <?php        
+       <img src='./imagenes/icon-good.svg' alt='icon'>
+       <span class="texto-blanco">Se agregó <?php echo $cosa . " " . $valor2 ?></span><br> 
+       <?php    
         } 
+
         else 
         {
             echo $conn->error;
@@ -339,7 +345,7 @@ if($debug){
 
         if ($conn->query($my_query) === TRUE) {
         ?>
-        <img src='./imagenes/icon-good.svg'>Se modificó <?php echo $cosa . " " . $valor2 ?><br>        
+        <img src='./imagenes/icon-good.svg' alt='icon'><span class="texto-blanco">Se modificó <?php echo $cosa . " " . $valor2 ?></span><br>        
         <?php
         } else {
             echo $conn->error;
@@ -371,9 +377,10 @@ if ($accion == 5)
             $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
 
             if ($conn->query($my_query) === TRUE) {
-            echo "<img src='./imagenes/icon-good.svg'>  Se borró $cosa siguiente....<br>";
-            echo "Código:  $valor1 <br>
-                  Nombre:  $valor2 <br><br>";
+                echo "<img src='./imagenes/icon-good.svg' alt='icon' style='display: inline; vertical-align: middle;'> 
+                <span style='color: white;'>Se borró $cosa siguiente....</span><br>
+                <span style='color: white;'>Código:  $valor1</span><br>
+                <span style='color: white;'>Nombre:  $valor2</span><br><br>";
             } else {
                 echo $conn->error;
                 echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se borró $cosa, tome nota del error <br>";
@@ -630,6 +637,7 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
         <h1 class="titulo-h1">Alta de Películas</h1>
         <div class="links">
             <a href="admin_dashboard.php" class= "button button-blue">Volver al dashboard</a>
+            <a href="abm_peliculas.php" class="button button-blue">Gestionar Películas</a>
         </div>
 
         <?php
