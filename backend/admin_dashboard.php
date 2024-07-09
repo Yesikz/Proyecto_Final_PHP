@@ -101,6 +101,7 @@ if (!isset($_SESSION['admin_email'])) {
         <h2>Hola <?php echo $_SESSION['admin_nombre']; ?>👋🏼</h2>
         <!-- <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p> -->
         <div class="buttons">
+             <a href="usuarios_registrados.php" class="button">Usuarios Registrados</a>
             <a href="abm_peliculas.php" class="button"><img src="./imagenes/claqueta.png" alt="Películas">Gestionar Películas</a>
             <a href="abm_generos.php" class="button"><img src="./imagenes/teatro.png" alt="Géneros">Gestionar Géneros</a>
             <a href="abm_directores.php" class="button"><img src="./imagenes/silla-de-director.png" alt="Directores">Gestionar Directores</a>
