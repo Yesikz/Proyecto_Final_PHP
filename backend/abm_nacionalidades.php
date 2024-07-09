@@ -352,7 +352,7 @@ if ($accion==3) /// trae datos para modificar
 			echo "<div class='form-section'>";
 			echo "<h3>Alta de países para pelis y directores</h3>";
 			echo "<form name='form1' method='post' action='$filename'>";
-			echo "<input name='valor2' type='text' size='40' maxlength='40' placeholder='Nombre'><br>";
+			echo "<input name='valor2' type='text' size='40' maxlength='40' placeholder='Pais'><br>";
 			echo "<input name='valor3' type='text' size='40' maxlength='40' placeholder='País'><br>";
 			echo "<select name='valor4' onchange=\"this.setAttribute('data-placeholder', '');\">";
 			echo "<option value='' selected disabled hidden>Estado</option>";
