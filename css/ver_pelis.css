@@ -5,8 +5,7 @@
 
 .detalle {
   padding-top: 50px;
-  background: linear-gradient(to right top, #6d6969a7, #6d6969a7),
-    url("../img/rocky.jpg");
+  position:relative;
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -22,7 +21,7 @@
 }
 
 .imgDetalle img {
-  width: 800px;
+  width: 300px;
   height: auto; 
   max-width: 100%; 
 }
@@ -98,6 +97,10 @@ td:nth-child(1) {
   .imgDetalle {
     width: 100%;
     margin-bottom: 20px;
+  }
+  .imgDetalle img {
+    width: 100%;
+    height: auto;
   }
   .textoDetalle h1 {
     font-size: 1.5rem;

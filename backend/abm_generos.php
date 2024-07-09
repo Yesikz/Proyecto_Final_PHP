@@ -190,7 +190,7 @@ table tr:hover {
         <p>Has iniciado sesión como: <?php echo $_SESSION['admin_nombre']; ?></p> -->
         <div class="links">
             <a href="admin_dashboard.php" class="button button-blue">Volver al dashboard</a>
-            <a href="abm_generos.php" class="button button-blue">gestionar generos</a>
+            <a href="abm_generos.php" class="button button-blue">Gestionar Generos</a>
         </div>
     </div>
 

@@ -251,6 +251,7 @@ $cosa='el director';
         <h1 class="titulo-h1">Directores</h1>
         <div class="links">
             <a href="admin_dashboard.php" class= "button button-blue">Volver al dashboard</a>
+        <a href="abm_directores.php" class="button button-blue">Gestionar Directores</a>
         </div>
         </div>
 
