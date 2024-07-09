@@ -48,6 +48,7 @@
     .menu {
         padding: 10px;
         text-align: center;
+      
     }
 
     .menu ul {
@@ -55,17 +56,17 @@
         padding: 0;
         margin: 0;
     }
-
+/*
     .menu ul li {
         padding: 10px 0;
-    }
+    }*/
 
     .menu ul li a {
         display: block; /* Mostrar como lista vertical */
         text-decoration: none;
         color: #000;
-        font-size: 18px;
-        padding: 4px 20px; 
+        font-size: 0.9rem;
+        padding: 2px 2px; 
         border-radius: 8px; 
         border: 1px solid transparent;
         transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -80,6 +81,7 @@
     .menu ul li.menu-1 a {
         background-color: #232220;
         color: white;
+        
     }
 
     .menu ul li.menu-1 a:hover {
@@ -90,7 +92,7 @@
     .menu ul li.peli-adm a {
         background-image: linear-gradient(to bottom, #b37ef0, #476bce);
         color: #fff;
-        padding: 10px 5px;
+       /* padding: 10px 5px;*/
         border-radius: 8px;
     }
 
