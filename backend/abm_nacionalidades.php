@@ -272,41 +272,21 @@ if ($accion==5) /// baja
  	  	$valor1 = $_POST['valor1'];
  	  	$valor2 = $_POST['valor2'];
  	  	
-
-/* 			$query="select * from peliculas where genero=$valor1";
-			$result = $conn->query($my_query);
-			
-			if($result){
-				echo" hay peliculas que tienen asigando ese pais, no se puede borrar hasta tanto modifique las pelis";
-				}  
- 	  
- 	  	else{   */
-		 	   /* 	$my_query= "select * from $tabla1 where $campo1='$valor1'  ";     
-						$result = $conn->query($my_query);
-						while($arr = $result->fetch_assoc())			
-						{
-								$campot1=$arr['id_genero'];
-								$campot2=$arr['nombre_genero'];	
-						}   */ 
-
-			 			$my_query=" delete from `$tabla1` where `$campo1`='$valor1' ";
+		$my_query=" delete from `$tabla1` where `$campo1`='$valor1' ";
 					
-						if( $conn->query($my_query) ===TRUE)
-						{
-								echo "<img src='./imagenes/ok.jpg'>  Se borró $cosa siguiente....<br>";
-								echo "Código:  $valor1 <br>
-								      Nombre:  $valor2 <br><br>";
-						}
-						else
-						{
-							echo $conn->error;
-							echo "<br><img src='./imagenes/oo.jpg'> Error, no se borró $cosa, tome nota del error <br>";
-						}
-					}
+		if( $conn->query($my_query) ===TRUE)
+		{
+			echo "<img src='./imagenes/ok.jpg'>  Se borró $cosa siguiente....<br>";
+			echo "Código:  $valor1 <br>
+	        Nombre:  $valor2 <br><br>";
+		}
+		else
+		{
+			echo $conn->error;
+			echo "<br><img src='./imagenes/oo.jpg'> Error, no se borró $cosa, tome nota del error <br>";
+		}
+	}
 	
-
-
-
 
 if ($accion==3) /// trae datos para modificar
 		{
@@ -327,7 +307,7 @@ if ($accion==3) /// trae datos para modificar
 	if ($estado==0)
 		{ $muestroestado="Inactivo" ;
 		}
-  else
+    else
 		{	$muestroestado="Activo" ;
 		}						
 			

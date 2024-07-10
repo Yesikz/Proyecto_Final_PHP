@@ -321,11 +321,11 @@ if ($accion == 1) { // alta
 //// modificacion
 if ($accion == 2) { 
 
-        $valor1 = $_POST['valor1'];
-        $valor2 = $_POST['valor2'];
-        $valor3 = $_POST['valor3'];
-        $valor4 = $_POST['valor4'];
-        $valor5 = $_POST['valor5'];
+    $valor1 = $_POST['valor1'];
+    $valor2 = $_POST['valor2'];
+    $valor3 = $_POST['valor3'];
+    $valor4 = $_POST['valor4'];
+    $valor5 = $_POST['valor5'];
     $valor6 = $_POST['valor6'];
     $valor7 = $_POST['valor7'];
     $valor8 = $_POST['valor8'];
@@ -360,36 +360,22 @@ if ($accion == 5)
         $valor1 = $_POST['valor1'];
     $valor2 = $_POST['valor2'];
    
-   /*
-            $my_query = "select * from peliculas where $campos1 =$valor1";
-        $result = $conn->query($my_query);
+    $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
 
-    if ($result) {
-        echo " hay peliculas que tienen asignado ese director, no se puede borrar hasta tanto modifique las pelis";
-        } else {
-            $my_query = "select * from $tabla1 where $campo1='$valor1'";
-            $result = $conn->query($my_query);
-            while ($arr = $result->fetch_assoc()) {
-                $campot1 = $arr['id_dir'];
-                $campot2 = $arr['nombre_dir'];
-        } */
-
-            $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
-
-            if ($conn->query($my_query) === TRUE) {
-                echo "<img src='./imagenes/icon-good.svg' alt='icon' style='display: inline; vertical-align: middle;'> 
-                <span style='color: white;'>Se borró $cosa siguiente....</span><br>
-                <span style='color: white;'>Código:  $valor1</span><br>
-                <span style='color: white;'>Nombre:  $valor2</span><br><br>";
-            } else {
-                echo $conn->error;
-                echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se borró $cosa, tome nota del error <br>";
-            }
-        }
+    if ($conn->query($my_query) === TRUE) {
+        echo "<img src='./imagenes/icon-good.svg' alt='icon' style='display: inline; vertical-align: middle;'> 
+        <span style='color: white;'>Se borró $cosa siguiente....</span><br>
+        <span style='color: white;'>Código:  $valor1</span><br>
+        <span style='color: white;'>Nombre:  $valor2</span><br><br>";
+    } else {
+        echo $conn->error;
+        echo "<br><img src='./imagenes/icon-bad.svg'> Error, no se borró $cosa, tome nota del error <br>";
+    }
+}
 /////////////////////////////////////
 
 if ($accion == 3) { // trae datos para modificar
-        $valor1 = $_POST['valor1'];
+    $valor1 = $_POST['valor1'];
     
     $esteanio=date("Y");
 
@@ -403,8 +389,6 @@ select
                t1.genero=t2.id_genero AND 
                t1.director=t3.id_dir  AND 
                t1.nacionalidad=t4.id_nacio   order by t1.orden";
-
-                            //// if($debug) {    echo "my_query $my_query <br>"; }
 
 $result = $conn->query($my_query);
 
@@ -683,8 +667,6 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
             <option value='0'>Inactivo</option>
         </select><br>
         <div>
-      <!--      <h3 class="titulo-h3">Subir archivo</h3>
-            <input type='file' name='file'> -->
             <input type='hidden' name='accion' value='1'>
             <br> 
             <input type='submit' class='button button-green' value='Cargar'>
