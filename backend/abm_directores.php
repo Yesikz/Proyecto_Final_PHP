@@ -313,22 +313,7 @@ if ($accion == 5)
     $valor1 = $_POST['valor1'];
     $valor2 = $_POST['valor2'];
     
-    /*
-
-    $my_query = "select * from peliculas where director =$valor1";
-    $result = $conn->query($my_query);
-
-    if ($result) {
-        echo " hay peliculas que tienen asignado ese director, no se puede borrar hasta tanto modifique las pelis";
-    } else {
-        $my_query = "select * from $tabla1 where $campo1='$valor1'";
-        $result = $conn->query($my_query);
-        while ($arr = $result->fetch_assoc()) {
-            $campot1 = $arr['id_dir'];
-            $campot2 = $arr['nombre_dir'];
-        }   */
-  
-        $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
+    $my_query = "delete from `$tabla1` where `$campo1`='$valor1'";
 
         if ($conn->query($my_query) === TRUE) {
             echo "<img src='./imagenes/ok.jpg'>  Se borró $cosa siguiente....<br>";
@@ -396,11 +381,6 @@ if ($accion == 3)
     echo "</form>";
     echo "<br><br>";
 
-/* del JSON 
-    echo "<label for='pais-select'>Selecciona un país:</label>";
-    echo "<select id='pais-select' class='pais-select' data-nacionalidad='$nacionalidad' name='valor3'>";
-    echo "<option value='$nacionalidad'>Seleccionar</option>";
-    echo "</select><br>";   */ 
 }
 
 // Formulario de alta
@@ -429,12 +409,6 @@ if ($accion == 0 || $accion == 5 || $accion == 2 || $accion == 1)
            Origen: </strong></font> <select name='valor3' size='1'>
           <?php echo $paises ?> </select> <br>
     <?php
-
-/*  del JSON
-    echo "<label for='pais-select'>Selecciona un país:</label>";
-    echo "<select id='valor3' class='pais-select' name='valor3'>";
-    echo "<option value=''>Seleccionar</option>";
-    echo "</select><br>";    */
 
     echo "Orden: <input name='valor4' type='text' size='2' maxlength='2' value=''><br>";
     echo "Estado :<select name='valor5'><option value='1'>Activo</option><option value='0'>Inactivo</option> </select><br>";
