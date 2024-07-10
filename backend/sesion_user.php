@@ -19,7 +19,6 @@ $result = $conn->query($sql);
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=Carrois+Gothic&family=Noto+Sans+Khojki&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/styles.css">
-        <link rel="stylesheet" href="../css/menu-hamburguesa.css">
 
         <title>Acisey Movies</title>
         
@@ -29,14 +28,6 @@ $result = $conn->query($sql);
         <header>
             <div class="logo-container">
                 <h1><img id="logo" src="../img/cinemaacicey2.png" width="100 px" alt="logo"></h1>
-            </div>
-
-            <div class="mobile-menu-toggle">
-                <button class="hamburger" onclick="toggleMenu()">
-                    <span class="hamburger-box">
-                        <span class="hamburger-inner">&#9776;</span>
-                    </span>
-                </button>
             </div>
 
             <nav id="navbar">
@@ -111,9 +102,6 @@ $result = $conn->query($sql);
                 </div>
             </footer>
 
-            <!--Scrips-->
-
-            <script src="./js/menu-hamburguesa.js"></script>
     </body>
 
     </html>

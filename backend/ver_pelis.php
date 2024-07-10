@@ -1,27 +1,12 @@
-<?php
-
-
-// session_start(); 
-// include "config.php";
-
-// $my_query =
-// "
-// SELECT
-//     t1.id_pelicula, t1.nombre_pelicula, t1.genero, t1.lanzamiento , t1.duracion  , t1.director ,
-//     t1.sinapsis ,  t1.nacionalidad , t1.clasificacion ,  t1.calificacion , t1.poster  
-//    from peliculas as t1";
-//    $result = $conn->query($sql);
-?>
 
 <?php
-session_start();
-include "config.php";  // Incluye el archivo de configuración para la conexión a la base de datos
 
-// Verificar si se ha pasado el ID de la película en la URL
+include "config.php";  
+
 if (isset($_GET['id_pelicula'])) {
     $id_pelicula = $_GET['id_pelicula'];
 
-    // Consulta a la base de datos para obtener los detalles de la película
+
     $sql = "SELECT 
     t1.id_pelicula, 
     t1.nombre_pelicula, 
